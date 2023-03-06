@@ -1,6 +1,7 @@
 package mycleann;
 
-public class Admin {
+public class Admin
+{
 	
 	protected boolean adminlogged;
 	 protected String admin_name, admin_password;
