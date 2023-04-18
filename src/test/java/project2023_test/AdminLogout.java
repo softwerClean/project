@@ -17,7 +17,7 @@ public class AdminLogout {
 	@Given("the admin is loged in")
 	public void the_admin_is_loged_in()
 	{
-     admin.login("moheeb","123456");
+		admin =new Admin("abood","12345@abood");	
 	}
 	
 	@When("the admin is logs out")

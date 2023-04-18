@@ -1,18 +1,21 @@
 package mycleann;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Product 
 {
 
-	protected String Category,name,price,amount;
+	protected String Category,price,amount;
+	private String name;
 	protected static ArrayList <String[]> products =new ArrayList();
 	protected boolean add;
 	protected boolean delete;
+	protected boolean found;
 	protected boolean update;
 	protected int var;
 	protected int width,hight;
-	protected static ArrayList <String[]> find_by_name =new ArrayList();
+	protected static ArrayList <Product> find_by_name =new ArrayList();
 
 	
 	public Product() 
@@ -24,7 +27,12 @@ public class Product
 		this.delete=false;
 		this.update=false;	
 	}
-	
+	 public void setTitle(String name) {
+	        this.name = name;
+	    }
+	  public  String getTitle() {
+	        return name;
+	    }
 	public void Product(String Category, String name, String price, String amount)
 	{
 		this.Category=Category;
@@ -111,6 +119,24 @@ public class Product
 		// TODO Auto-generated method stub
 		return this.update;
 	}
-	
+
+	public static List<Product> SearchByName(String string)
+	{
+		List<Product> name =new ArrayList();
+for(int i=0;i<find_by_name.size();i++)
+{
+	  if(find_by_name.get(i).equals(name)){
+		  name.add(find_by_name.get(i));
+      }
+}
+		
+		
+		return name;
+	}
+	public boolean isfound()
+	{
+		
+		return this.found;
+	}
 }
 
