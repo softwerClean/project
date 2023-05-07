@@ -5,6 +5,7 @@ public class Admin
 	
 	protected boolean adminlogged;
 	 protected String admin_name, admin_password;
+	 protected String Update;
 	 public Admin(String user_name, String password) 
 	 {
 		 this.admin_name=user_name;
@@ -41,7 +42,8 @@ public boolean isLogged()
 	return this.adminlogged;
 	
    }
-public void updatingUp(Admin admin) {
-	
+public String updatingUp(Admin admin) 
+{
+	return this.Update;
 }
   }

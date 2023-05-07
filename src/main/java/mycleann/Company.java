@@ -19,8 +19,8 @@ public class Company extends Product
 	protected boolean isAdded;
 	protected static List<Company> clients = new ArrayList<Company>();
 
-    private static List<Product> Product =new ArrayList<Product>();
-    private static List<Customers> Customer = new ArrayList<Customers>();
+   // private static List<Product> PRODUCTS =new ArrayList<Product>();
+    private static List<Customers> CUSTOMERS = new ArrayList<Customers>();
     public Company() {
 		isAdded = false;
 		this.name="";
@@ -29,7 +29,7 @@ public class Company extends Product
 	public static void addUser(Admin ad,Customers cus)
 	{
 		if(ad.isLogged()&&!isUserRegestered(cus.id)) {
-			Customer.add(cus);
+			CUSTOMERS.add(cus);
 		}
 		else if(!ad.isLogged()) logger.log(Level.INFO,"we must the admin logged in ");
 		 else if(isUserRegestered(cus.id)) logger.log(Level.INFO,"this user is already registered");
@@ -39,9 +39,9 @@ public class Company extends Product
 	public static boolean isUserRegestered(String admin)
 	{
 
-		for (int i = 0 ; i<Customer.size();i++)
+		for (int i = 0 ; i<CUSTOMERS.size();i++)
 		{
-			if (Customer.get(i).id.equals(admin))
+			if (CUSTOMERS.get(i).id.equals(admin))
 				return true;
 		}
 		return false;
@@ -68,9 +68,9 @@ public class Company extends Product
 	public static List<Customers> serachUserBysig(String isbn)
 	{
 	    List<Customers> serch=new ArrayList<Customers>();
-	    for(int i = 0; i< Customer.size(); i++)
+	    for(int i = 0; i< CUSTOMERS.size(); i++)
 	    {
-	        if(Customer.get(i).id.contains(isbn)) serch.add(Customer.get(i));
+	        if(CUSTOMERS.get(i).id.contains(isbn)) serch.add(CUSTOMERS.get(i));
 
 	    }
 	    return serch;

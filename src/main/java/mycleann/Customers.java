@@ -15,12 +15,13 @@ public class Customers
 	protected String id;
 	protected String name;
 	protected String address;
-	protected String email,phone;
-	protected static ArrayList <String[]> customers =new ArrayList();
+	protected String email;
+	protected String phone;
+	protected static ArrayList <String[]> customers =new ArrayList<String[]>();
 	protected boolean add;
 	protected boolean delete;
 	protected boolean update;
-	protected static ArrayList <String[]> find_by_name =new ArrayList();
+	protected static ArrayList <String[]> find_by_name =new ArrayList<String[]>();
 
 	
 	public Customers()
