@@ -16,11 +16,12 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
-@tag
-Feature: Notify customer
+Feature: Order distribution
 
-Scenario: send email
-Given the admin logged in
-And  the order is complete
-When  the admin send email remender
-Then the customer should receive email " the order is completed "and "You can come to pick it up"    
+  Scenario: Distribute orders to available workers
+    Given a worker named "Alice" is available
+    And a worker named "Bob" is available
+    And an order with ID "1234" and customer name "John" is received
+    When the order is added to the distribution queue
+    Then the order should be assigned to worker "Alice"
+    And worker "Bob" should still be available

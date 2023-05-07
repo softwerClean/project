@@ -23,14 +23,12 @@ Description: you can Delete product if the admin login
 
 Scenario: Delete product success
 Given the admin is logged in 
-And the name is "rug",the Category is "Cotton",the price is "100",the amount is "3"
+And the name is "rug",the Category is "Cotton",the price is "100",the amount is "3",the orderID is "101520"
 When the product is deleted from the menue 
-Then the product with name is "rug",the Category is "Cotton",the price is "100",the amount is "3" is deleted from menue         
+Then the product with name is "rug",the Category is "Cotton",the price is "100",the amount is "3",the orderID is "101520" is deleted from menue         
 
 Scenario: Delete product and the admin is not login
 Given the admin is not login 
-And the name is "rug",the Category is "Cotton",the price is "100",the amount is "3"
+And the name is "rug",the Category is "Cotton",the price is "100",the amount is "3",the orderID is "101520"
 When the product is not Deleted from the menue
 Then print "can not Delete becouse the admin is not login"
-
-

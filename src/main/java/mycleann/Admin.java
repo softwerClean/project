@@ -12,6 +12,11 @@ public class Admin
 		 
 		 this.adminlogged=false;
 	 }
+	 public Admin() {
+		 this.admin_name="adham_12028277";
+		 this.admin_password="123456789@adham";
+	 }
+
 public boolean login(String user_name, String password)
 {
 	
@@ -37,7 +42,6 @@ public boolean isLogged()
 	
    }
 public void updatingUp(Admin admin) {
-	// TODO Auto-generated method stub
 	
 }
   }

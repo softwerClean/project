@@ -1,8 +1,5 @@
 package project2023_test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +12,7 @@ import io.cucumber.java.en.When;
 import mycleann.Admin;
 import mycleann.Company;
 import mycleann.Customers;
+import mycleann.FirstClass;
 import mycleann.Product;
 
 import java.time.LocalDateTime;
@@ -25,6 +23,7 @@ import java.util.Scanner;
 
 public class Rrport 
 {
+	static Logger logger = Logger.getLogger(FirstClass.class.getName());
 
 Admin admin;
 Customers cus;
@@ -55,11 +54,11 @@ public void Rrport()
 		   {
 			 System.out.println("-----------------------------------------------------");
 		     
-			 System.out.println(ad.get("name"));  
-			 System.out.println(ad.get("user_name"));  
-			 System.out.println(ad.get("phone_number"));  
-			 System.out.println(ad.get("city"));
-			 System.out.println("------------------------------------------------------");
+			 logger.log(Level.INFO,ad.get("name"));  
+			 logger.log(Level.INFO,ad.get("user_name"));  
+			 logger.log(Level.INFO,ad.get("phone_number"));  
+			 logger.log(Level.INFO,ad.get("city"));
+			 logger.log(Level.INFO,"------------------------------------------------------");
 			   
 		   }
 		   
@@ -80,13 +79,13 @@ public void Rrport()
 		   
 		   for(Map<String, String> ad: list) 
 		   {
-			 System.out.println("-----------------------------------------------------");
+			   logger.log(Level.INFO,"-----------------------------------------------------");
 		     
-			 System.out.println(ad.get("Category"));  
-			 System.out.println(ad.get("name"));  
-			 System.out.println(ad.get("price"));  
-			 System.out.println(ad.get("amount"));
-			 System.out.println("------------------------------------------------------");
+			   logger.log(Level.INFO,ad.get("Category"));  
+			   logger.log(Level.INFO,ad.get("name"));  
+			   logger.log(Level.INFO,ad.get("price"));  
+			   logger.log(Level.INFO,ad.get("amount"));
+			   logger.log(Level.INFO,"------------------------------------------------------");
 			   
 		   }
 	}

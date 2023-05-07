@@ -22,34 +22,21 @@ Description: you can update product if the admin login
 
 Scenario: update missing product done
 Given admin is login 
-And  the product name is "rug",the Category is "Cotton",the price is "100",the amount is "3"
+And  the product name is "rug",the Category is "Cotton",the price is "100",the amount is "3",the orderID is "101520"
 When the product is Update missing from the menu
-Then the product update to the name  "rug",the Category is "Cotton",the price is "100",the amount is "3"   
+Then the product update to the product name is "rug",the Category is "Cotton",the price is "100",the amount is "3",the orderID is "101520"
 
 
 Scenario: update missing product and admin is not logged in
 Given the admin is not login 
-And  the product name is "rug",the Category is "Cotton",the price is "100",the amount is "3"
+And the product name is "rug",the Category is "Cotton",the price is "100",the amount is "3",the orderID is "101520"
 When  the product is Update missing from the menu
 Then error message was printed "can not update missing becouse  the admin is not login "
 
-Scenario: update up product done
-Given  admin is login 
-And  the product name is "rug",the Category is "Cotton",the price is "100",the amount is "3"
-When the product is Update missing from the menu
-Then  the product update to the name  "rug",the Category is "Cotton",the price is "100",the amount is "3"   
 
 
 Scenario: update up product and admin is not logged in
 Given the admin is not login 
-And  the product name is "rug",the Category is "Cotton",the price is "100",the amount is "3"
+And  the product name is "rug",the Category is "Cotton",the price is "100",the amount is "3",the orderID is "101520"
 When  the product is Update up from the menu
-Then error message was printed "can not update up becouse  the admin is not login "
-
-
-
-
-
-
-
-
+Then print error message "can not update up becouse  the admin is not login "

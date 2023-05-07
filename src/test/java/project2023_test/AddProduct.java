@@ -2,14 +2,19 @@ package project2023_test;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.logging.Logger;
+import java.util.logging.Level;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import mycleann.Admin;
+import mycleann.FirstClass;
 import mycleann.Product;
 
 public class AddProduct
 {
+	static Logger logger = Logger.getLogger(FirstClass.class.getName());
+
 	Admin admin;
 	Product product;
 	public AddProduct(Product product)
@@ -26,7 +31,7 @@ public void the_admin_is_log() {
 
 @Given("i wont to add the product")
 public void i_wont_to_add_the_product() {
-	product.PutProduct("rug","Cotton","100","3");
+	product.PutProduct("rug","Cotton","100","3","101520");
     
 }
 
@@ -50,7 +55,7 @@ public void the_admin_is_not_log() {
 @Then("error message {string}")
 public void error_message(String string) {
 	assertEquals(false,product.add(admin));
-	System.out.println("can not add becouse the admin is not login");
+	logger.log(Level.INFO,"can not add becouse the admin is not login");
    
 }
 }

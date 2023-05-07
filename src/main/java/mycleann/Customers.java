@@ -1,17 +1,21 @@
 package mycleann;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import java.util.logging.Logger;
+import java.util.logging.Level;
 public class Customers 
-{
+{	static Logger logger = Logger.getLogger(FirstClass.class.getName());
 
 
-	protected String id,phone;
+	protected List<Double> transactionAmounts;
+	protected double totalSpending;
+	protected boolean eligibleForDiscount;
+	protected String id;
 	protected String name;
 	protected String address;
-	protected String code;
-	protected String city;
-	private String email;
+	protected String email,phone;
 	protected static ArrayList <String[]> customers =new ArrayList();
 	protected boolean add;
 	protected boolean delete;
@@ -27,28 +31,20 @@ public class Customers
 		id="";
 		name="";
 		address="";
-		code="";
-		city="";
 		email="";
-		this.phone=phone;
+		phone="";
 	}
 	
-	public void Customers(String id, String name,String email, String address, String code,String city)
+	public void Customers(String id, String name,String email, String address,String phone)
 	{
 		this.id=id;
 		this.name=name;
 		this.email=email;
 		this.address=address;
-		this.code=code;
-		this.city=city;
-	
-	}
-	public String GetEmail() {
-		return email;
-	}
-
-	public void SetEmail(String email) {
-		this.email = email;
+		this.phone=phone;
+		 this.transactionAmounts = new ArrayList<Double>();
+	        this.totalSpending = 0;
+	        this.eligibleForDiscount = false;
 	}
 	
 
@@ -63,19 +59,17 @@ public class Customers
 	}
 	else
 	{
-		System.out.println("the admin not loggin");
+		logger.log(Level.INFO,"the admin not loggin");
 	}
 		return add;
 		
 	}
 
 	public boolean addded() {
-		// TODO Auto-generated method stub
 		return this.add;
 	}
 	
-	public void putcustomer(String string, String string2, String string3, String string4) {
-		// TODO Auto-generated method stub
+	public void putcustomer(String string, String string2, String string3, String string4,String string5) {
 		
 	}
 
@@ -92,13 +86,11 @@ public class Customers
 	
 	public boolean delete() 
 	{
-		// TODO Auto-generated method stub
 		return this.delete;
 	}
 
 		public boolean UpdateMissing(Admin admin) 
 	{
-		// TODO Auto-generated method stub
 		update= false;
 		
 		if(admin.isLogged()) 
@@ -111,7 +103,6 @@ public class Customers
 	}
 	public boolean updateUp(Admin admin) 
 	{
-		// TODO Auto-generated method stub
 		update= false;
 		
 		if(admin.isLogged()) 
@@ -123,7 +114,41 @@ public class Customers
 	}
 
 	public boolean update() {
-		// TODO Auto-generated method stub
 		return this.update;
 	}
+	
+	
+	public String GetEmail() {
+		return email;
+	}
+
+	public void SetEmail(String email) {
+		this.email = email;
+	}
+	
+	 public void addTransaction(double amount) {
+	        transactionAmounts.add(amount);
+	        totalSpending += amount;
+	        if (totalSpending > 400) {
+	            eligibleForDiscount = true;
+	        }
+}
+	 
+	 public double getTotalSpending() {
+	        return totalSpending;
+	    }
+
+	    public boolean isEligibleForDiscount() {
+	        return eligibleForDiscount;
+	    }
+	    
+	    public boolean applyDiscount() {
+	        if (eligibleForDiscount) {
+	            double discountAmount = totalSpending * 0.1;
+	            logger.log(Level.INFO,name + " is eligible for a 10% discount of " + discountAmount + " NIS.");
+	        } else {
+	        	logger.log(Level.INFO,name + " is not eligible for the discount.");
+	        }
+			return applyDiscount();
+	    }
 }

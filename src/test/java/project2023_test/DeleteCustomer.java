@@ -1,15 +1,19 @@
 package project2023_test;
 import static org.junit.Assert.assertEquals;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import mycleann.Admin;
 import mycleann.Customers;
-import mycleann.Product; 
+import mycleann.FirstClass;
 public class DeleteCustomer {
 
-	
+	static Logger logger = Logger.getLogger(FirstClass.class.getName());
+
 	Admin admin;
 	Customers customer;
 	public DeleteCustomer(Customers customer) 
@@ -64,6 +68,6 @@ public class DeleteCustomer {
 	@Then("print message {string}")
 	public void print_message(String string) {
 		 assertEquals(false,customer.delete(admin));
-			System.out.println("can not Delete becouse the admin is not login");
+		 logger.log(Level.INFO,"can not Delete becouse the admin is not login");
 	}
 }

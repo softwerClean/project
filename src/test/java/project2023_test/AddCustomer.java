@@ -2,15 +2,18 @@ package project2023_test;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.logging.Logger;
+import java.util.logging.Level;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import mycleann.Admin;
 import mycleann.Customers;
-import mycleann.Product; 
+import mycleann.FirstClass;
 
 public class AddCustomer {
-	
+	static Logger logger = Logger.getLogger(FirstClass.class.getName());
+
 	Admin admin;
 	Customers customer;
 
@@ -29,7 +32,7 @@ public class AddCustomer {
 
 	@Given("i will to add the customer")
 	public void i_will_to_add_the_customer() {
-		customer.putcustomer("12028255","ali","salfeet","0594348312");
+		customer.Customers("12028255","ali","salfeet","0594348312", "amamry@gmail.com");
 
 	}
 
@@ -53,7 +56,7 @@ public class AddCustomer {
 	
 	@Given("i will to add a customer")
 	public void i_will_to_add_a_customer() {
-		customer.putcustomer("12028255","ali","salfeet","0594348312");
+		customer.Customers("12028255","ali","salfeet","0594348312", "amamry@gmail.com");
 
 	}
 
@@ -66,7 +69,7 @@ public class AddCustomer {
 	@Then("adding failed and print error message {string}")
 	public void adding_failed_and_print_error_message(String string) {
 		assertEquals(false,customer.addd(admin));
-		System.out.println("please login to add customer");
+		logger.log(Level.INFO,"please login to add customer");
 	}
 
 }

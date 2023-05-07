@@ -2,12 +2,14 @@ package mycleann;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.logging.Logger;
+import java.util.logging.Level;
 public class Product 
 {
+	static Logger logger = Logger.getLogger(FirstClass.class.getName());
 
 	protected String Category,price,amount;
-	private String name;
+	protected String name;
 	protected static ArrayList <String[]> products =new ArrayList();
 	protected boolean add;
 	protected boolean delete;
@@ -15,8 +17,42 @@ public class Product
 	protected boolean update;
 	protected int var;
 	protected int width,hight;
+	private String Orderid;
 	protected static ArrayList <Product> find_by_name =new ArrayList();
 
+	
+	public String getOrderid() {
+		return Orderid;
+	}
+	
+	public void setOrderid(String orderid) {
+		Orderid = orderid;
+	}
+	public String getCategory() {
+		return Category;
+	}
+
+	public void setCategory(String category) {
+		Category = category;
+	}	
+	public String getPrice() {
+		return price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
+	}
+	public String getAmount() {
+		return amount;
+	}
+	public void setAmount(String amount) {
+		this.amount = amount;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	
 	public Product() 
 	{
@@ -27,18 +63,21 @@ public class Product
 		this.delete=false;
 		this.update=false;	
 	}
-	 public void setTitle(String name) {
+	
+
+	public void setTitle(String name) {
 	        this.name = name;
 	    }
 	  public  String getTitle() {
 	        return name;
 	    }
-	public void Product(String Category, String name, String price, String amount)
+	public void Product(String Category, String name, String price, String amount,String orderid)
 	{
 		this.Category=Category;
 		this.name=name;
 		this.price=price;
 		this.amount=amount;
+		this.Orderid=orderid;
 	}
 	
 	public boolean add(Admin admin)
@@ -46,25 +85,23 @@ public class Product
 		add = false;
 	if(admin.isLogged())
 	{
-		String [] product2 = {this.Category,this.name,this.price,this.amount};
+		String [] product2 = {this.Category,this.name,this.price,this.amount,this.Orderid};
 		if(Product.products.add(product2))
 			add=true;
 	}
 	else
 	{
-		System.out.println("the admin not loggin");
+		logger.log(Level.INFO,"the admin not loggin");
 	}
 		return add;
 		
 	}
 
 	public boolean added() {
-		// TODO Auto-generated method stub
 		return this.add;
 	}
 
-	public void PutProduct(String string, String string2, String string3, String string4) {
-		// TODO Auto-generated method stub
+	public void PutProduct(String string, String string2, String string3, String string4,String string5) {
 		
 	}
 
@@ -82,13 +119,11 @@ public class Product
 	
 	public boolean delete() 
 	{
-		// TODO Auto-generated method stub
 		return this.delete;
 	}
 
 	public boolean UpdateMissing(Admin admin) 
 	{
-		// TODO Auto-generated method stub
 		var = Integer.parseInt(amount);
 		update= false;
 		
@@ -102,7 +137,6 @@ public class Product
 	}
 	public boolean updateUp(Admin admin) 
 	{
-		// TODO Auto-generated method stub
 		var = Integer.parseInt(amount);
 		update= false;
 		
@@ -116,7 +150,6 @@ public class Product
 	}
 
 	public boolean update() {
-		// TODO Auto-generated method stub
 		return this.update;
 	}
 

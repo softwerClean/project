@@ -1,6 +1,5 @@
 package mycleann;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -10,10 +9,9 @@ import java.util.logging.Logger;
 
 
 
-public class Company extends Customers
+public class Company extends Product
 {
 
-    private static EmailServer email2 = new EmailServer();
 
     static Logger logger
     = Logger.getLogger(Company.class.getName());
@@ -40,24 +38,7 @@ public class Company extends Customers
 
 	public static boolean isUserRegestered(String admin)
 	{
-//		isAdded = false;
-//
-//		if (admin.isLogged())
-//		{
-//			List<String> result = this.search(name);
-//
-//			if (result.isEmpty() && Company.add(this))
-//				isAdded = true;
-//			else
-//				logger.info("the id is already exists");
-//	
-//		}
-//		else
-//		{
-//			logger.info("\nthe admin must be logged in");
-//		}
-//
-	//	return isAdded;
+
 		for (int i = 0 ; i<Customer.size();i++)
 		{
 			if (Customer.get(i).id.equals(admin))
@@ -94,21 +75,8 @@ public class Company extends Customers
 	    }
 	    return serch;
 	}
-	public static void EmailServer(EmailServer email)
-	{
-		email2=email;
-		
-		
-	}
 	
-	public static void remender(Customers cus) throws IOException
-	{
-	String em=cus.GetEmail();
-	String f = "the order is completed";
-	String g="You can come to pick it up";
 	
-	email2.sendEmail(em, f, g);
-	}
-	
+
 	
 }
