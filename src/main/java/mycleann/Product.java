@@ -57,8 +57,8 @@ public class Product
 	public Product() 
 	{
 		
-		this.width=width;
-		this.hight=hight;
+		this.width=0;
+		this.hight=0;
 		this.add=false;
 		this.delete=false;
 		this.update=false;	

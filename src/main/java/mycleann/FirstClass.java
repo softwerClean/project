@@ -155,11 +155,8 @@ public class FirstClass {
 	 		             break;
 	 		         }
 	 		      }
-	 		         if(flag==0){
-	 		         }
-	 		         else{ 		 
-
-	 		         }
+	 		         
+	 		       
 	 		     BufferedWriter     writer = new BufferedWriter(new FileWriter("product.txt"));
 	 		writer.write("");
 	 		writer.flush();
@@ -266,11 +263,7 @@ public class FirstClass {
 		             break;
 		         }
 		      }
-		         if(flag1==0){
-		         }
-		         else{ 		 
-
-		         }
+		       
 		     BufferedWriter writer = new BufferedWriter(new FileWriter("customer.txt"));
 		writer.write("");
 		writer.flush();
