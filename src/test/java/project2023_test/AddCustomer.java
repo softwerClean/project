@@ -32,13 +32,13 @@ public class AddCustomer {
 
 	@Given("i will to add the customer")
 	public void i_will_to_add_the_customer() {
-		customer.ret("12028255","ali","salfeet","0594348312", "amamry@gmail.com");
+		customer=new Customers("12028255","ali","salfeet","0594348312", "amamry@gmail.com");
 
 	}
 
 	@When("Admin click button add customers")
 	public void admin_click_button_add_customers() {
-		customer.addd(admin);
+		customer.add(admin);
 
 	}
 
@@ -56,19 +56,19 @@ public class AddCustomer {
 	
 	@Given("i will to add a customer")
 	public void i_will_to_add_a_customer() {
-		customer.ret("12028255","ali","salfeet","0594348312", "amamry@gmail.com");
+		customer=new Customers("12028255","ali","salfeet","0594348312", "amamry@gmail.com");
 
 	}
 
 	@When("click add customer")
 	public void click_add_customer() {
-		customer.addd(admin);
+		customer.add(admin);
 
 	}
 
 	@Then("adding failed and print error message {string}")
 	public void adding_failed_and_print_error_message(String string) {
-		assertEquals(false,customer.addd(admin));
+		assertEquals(false,customer.add(admin));
 		logger.log(Level.INFO,"please login to add customer");
 	}
 

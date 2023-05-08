@@ -45,7 +45,7 @@ public class DeleteCustomer {
 
 	@Then("the customer with id is {string},the name is {string},the address is {string},the phone is {string} is deleted from menue")
 	public void the_customer_with_id_is_the_name_is_the_address_is_the_phone_is_is_deleted_from_menue(String string, String string2, String string3, String string4) {
-		assertEquals(true,customer.delete());
+		assertEquals(true,customer.delete(admin));
 
 	}
 

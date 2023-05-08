@@ -44,7 +44,7 @@ public class UpdateCustomer {
 
 	@Then("customer update to the id  {string},the name is {string},the price is {string},the amount is {string}")
 	public void customer_update_to_the_id_the_name_is_the_price_is_the_amount_is(String string, String string2, String string3, String string4) {
-		assertEquals(true,customer.update());
+		assertEquals(true,customer.update(admin));
 	}
 
 	@Given("the admin is not log in")
@@ -59,7 +59,7 @@ public class UpdateCustomer {
 
 	@Then("error message and printed {string}")
 	public void error_message_and_printed(String string) {
-		assertEquals(false,customer.updateUp(admin));
+		assertEquals(false,customer.update(admin));
 		logger.log(Level.INFO,"can not update up becouse  the admin is not login");
 	}
 
