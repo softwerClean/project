@@ -21,9 +21,9 @@ public class Admin
 	 }
 	 public Admin() 
 	 {
-		 this.admin_name="adham_12028277";
-		 this.admin_password="123456789@adham";				 
-				 
+	 
+		 admin_name=r.getProperty("dbname");
+		 admin_password=r.getProperty("dbpassword");
 	 }
 
 public boolean login(String user_name, String password)
