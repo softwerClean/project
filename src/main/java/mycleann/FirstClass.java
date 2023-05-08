@@ -282,7 +282,120 @@ public class FirstClass {
 	                            }
 	                            break;
 
+	                        case 9:
+	                            logger.log(Level.INFO, "Please enter the name: ");
+	                            String name5 = scanner.next();
+	                            int flag1 = 0;
+	                            try {
+	                                ArrayList<String> al = new ArrayList<String>();
+	                                RandomAccessFile raf = new RandomAccessFile("customer.txt", "rw");
+	                                raf.seek(0);
+	                                String s;
+	                                while ((s = raf.readLine()) != null) {
+	                                    al.add(s);
+	                                }
+	                                for (int i = 0; i < al.size(); i++) {
+	                                    String[] up = al.get(i).split(",");
+	                                    if (name5.equals(up[1])) {
+	                                        al.remove(i);
+	                                        flag1 = 1;
+	                                        break;
+	                                    }
+	                                }
+	                                BufferedWriter writer = new BufferedWriter(new FileWriter("customer.txt"));
+	                                writer.write("");
+	                                writer.flush();
+	                                writer.close();
+	                                raf.seek(0);
+	                                for (int i = 0; i < al.size(); i++) {
+	                                    raf.writeBytes(al.get(i) + "\n");
+	                                }
+	                                raf.close();
+	                            } catch (Exception exp) {
+	                                logger.log(Level.INFO, "Error");
+	                            }
+	                            break;
 
+	                        case 6:
+	                            String filename22 = "product.txt";
+	                            logger.log(Level.INFO, "Please enter the name: ");
+	                            String name12 = scanner.nextLine();
+	                            FileInputStream fis = new FileInputStream(filename22);
+	                            FileOutputStream fos = new FileOutputStream("output.txt");
+	                            byte[] buffer = new byte[1024];
+	                            int bytesRead;
+	                            String currentLine = "";
+
+	                            while ((bytesRead = fis.read(buffer)) != -1) {
+
+	                                String chunk = new String(buffer, 0, bytesRead);
+	                                int index;
+	                                while ((index = chunk.indexOf('\n')) != -1) {
+	                                    String line = currentLine + chunk.substring(0, index);
+
+	                                    String[] parts = line.split(",");
+	                                    String NAME1 = parts[1];
+	                                    if (NAME1.equals(name12)) {
+	                                        fos.write((parts[0] + " " + parts[1] + " " + parts[2] + " " + parts[3] + " " + parts[4] + "\n").getBytes());
+	                                        logger.log(Level.INFO, parts[0] + " " + parts[1] + " " + parts[2] + " " + parts[3] + " " + parts[4] + "\n");
+	                                    }
+
+	                                    chunk = chunk.substring(index + 1);
+	                                    currentLine = "";
+	                                }
+
+	                                currentLine += chunk;
+	                            }
+
+	                            if (!currentLine.isEmpty()) {
+	                                fos.write(("Product not found.\n").getBytes());
+	                            }
+	                            break;
+
+	                        case 16:
+	                            String filename7 = "customer.txt";
+	                            Scanner scanner7 = new Scanner(System.in);
+	                            logger.log(Level.INFO, "Please enter the name: ");
+	                            String name7 = scanner7.nextLine();
+
+	                            FileInputStream fis7 = new FileInputStream(filename7);
+	                            FileOutputStream fos7 = new FileOutputStream("output1.txt");
+
+	                            byte[] buffer7 = new byte[1024];
+	                            int bytesRead7;
+	                            String currentLine7 = "";
+
+	                            while ((bytesRead7 = fis7.read(buffer7)) != -1) {
+
+	                                String chunk7 = new String(buffer7, 0, bytesRead7);
+
+	                                int index7;
+
+	                                while ((index7 = chunk7.indexOf('\n')) != -1) {
+
+	                                    String line7 = currentLine7 + chunk7.substring(0, index7);
+
+	                                    String[] parts7 = line7.split(",");
+	                                    String nameInFile7 = parts7[1];
+	                                    if (nameInFile7.equals(name7)) {
+	                                        fos7.write((parts7[0] + " " + parts7[1] + " " + parts7[2] + " " + parts7[3] + " " + parts7[4] + "\n").getBytes());
+	                                        logger.log(Level.INFO, parts7[0] + " %s" + parts7[1] + " %s" + parts7[2] + " %s" + parts7[3] + " %s" + parts7[4] + "%s\n", "");
+	                                    }
+
+	                                    chunk7 = chunk7.substring(index7 + 1);
+	                                    currentLine7 = "";
+	                                }
+
+	                                currentLine7 += chunk7;
+	                            }
+
+	                            if (!currentLine7.isEmpty()) {
+	                                fos7.write(("Product not found.\n").getBytes());
+	                            }
+
+	                            break;
+
+	                    
 	 		
 //	 			case 4: 
 //
@@ -442,122 +555,122 @@ public class FirstClass {
 //	            newFILE1.write(n2);
 //	            newFILE1.close();         
 //		    break;
-	 			case 9:
-	 				logger.log(Level.INFO,print);
-	 				 String name5 = scanner.next();
-	 				
-		       int flag1=0;
-		        try{
-		            ArrayList<String>al=new ArrayList();
-		           RandomAccessFile raf=new  RandomAccessFile("customer.txt","rw");
-		           raf.seek(0);
-		          String s;
-		          while((s=raf.readLine())!=null){       
-		        al.add(s);
-		    }                                        
-		      for(int i=0;i<al.size();i++){
-		         String[]up=al.get(i).split(",");
-		         if(name5.equals(up[1])){
-		             al.remove(i);
-		              flag1=1;
-		             break;
-		         }
-		      }
-		       
-		     BufferedWriter writer = new BufferedWriter(new FileWriter("customer.txt"));
-		writer.write("");
-		writer.flush();
-		writer.close();
-		raf.seek(0);
-		         for(int i=0;i<al.size();i++){
-		      raf.writeBytes(al.get(i)+"\n");  
-		         }
-		         raf.close();
-		        }
-		        catch(Exception exp){
-		        	logger.log(Level.INFO,"Error");
-		        }
-		        break;
-	 			case 6:
-	 				String filenaMe = "product.txt";
-	 				Scanner myObj = new Scanner(System.in);
-	 				logger.log(Level.INFO,"please enter the Name :  ");
-	 				String Name = myObj.nextLine();
-	 				  FileInputStream fis = new FileInputStream(filenaMe);
-	 			             FileOutputStream fos4 = new FileOutputStream("output.txt");
-	 			            byte[] buffer = new byte[1024];
-	 			            int bytesRead;
-	 			            String currentLine = "";
-
-	 			            while ((bytesRead = fis.read(buffer)) != -1) {
-
-	 			                String chunk = new String(buffer, 0, bytesRead);
-	 			                int index;
-	 			                while ((index = chunk.indexOf('\n')) != -1) {
-	 			                    String line = currentLine + chunk.substring(0, index);
-	 			                 
-	 			                    String[] parts = line.split(",");
-	 			                    String NAME1 = parts[1];
-	 			                    if (NAME1.equals(Name)) {
-	 			                    	fos4.write((parts[0]+" "+parts[1]+" "+parts[2]+" "+parts[3]+" "+parts[4]+ "\n").getBytes());
-	 			                    	logger.log(Level.INFO,parts[0]+" "+parts[1]+" "+parts[2]+" "+parts[3]+" "+parts[4]+ "\n");
-	 			                    }
-
-	 			                    chunk = chunk.substring(index + 1);
-	 			                    currentLine = "";
-	 			                }
-
-	 			                currentLine += chunk;
-	 			            }
-
-	 			            if (!currentLine.isEmpty()) {
-	 			            	fos4.write(("Product not found.\n").getBytes());
-	 			            }
-                      break;
-		
-	 			case 16:
-	 				String filenaMe7 = "customer.txt"; 
-	 				Scanner myObj7 = new Scanner(System.in);
-	 				logger.log(Level.INFO,"please enter the Name :  ");
-	 				String Name7 = myObj7.nextLine();
-
-	 				  FileInputStream fis7 = new FileInputStream(filenaMe7);
-	 			             FileOutputStream fos7 = new FileOutputStream("output1.txt");
-
-	 			            byte[] buffer7 = new byte[1024];
-	 			            int bytesRead7;
-	 			            String currentLine7 = "";
-
-	 			            while ((bytesRead7 = fis7.read(buffer7)) != -1) {
-
-	 			                String chunk7 = new String(buffer7, 0, bytesRead7);
-
-	 			                int index7;
-
-	 			                while ((index7 = chunk7.indexOf('\n')) != -1) {
-
-	 			                    String line7 = currentLine7 + chunk7.substring(0, index7);
-	 			                 
-	 			                    String[] parts7 = line7.split(",");
-	 			                    String NAME7 = parts7[1];
-	 			                    if (NAME7.equals(Name7)) {
-	 			                    	fos7.write((parts7[0]+" "+parts7[1]+" "+parts7[2]+" "+parts7[3]+" "+parts7[4]+ "\n").getBytes());
-	 			                    	logger.log(Level.INFO,parts7[0]+" %s"+parts7[1]+" %s"+parts7[2]+" %s"+parts7[3]+" %s"+parts7[4]+ "%s\n");
-	 			                    }
-
-	 			                    chunk7 = chunk7.substring(index7 + 1);
-	 			                    currentLine7 = "";
-	 			                }
-
-	 			                currentLine7 += chunk7;
-	 			            }
-
-	 			            if (!currentLine7.isEmpty()) {
-	 			            	fos7.write(("Product not found.\n").getBytes());
-	 			            }
-
-break;
-	                   
+//	 			case 9:
+//	 				logger.log(Level.INFO,print);
+//	 				 String name5 = scanner.next();
+//	 				
+//		       int flag1=0;
+//		        try{
+//		            ArrayList<String>al=new ArrayList();
+//		           RandomAccessFile raf=new  RandomAccessFile("customer.txt","rw");
+//		           raf.seek(0);
+//		          String s;
+//		          while((s=raf.readLine())!=null){       
+//		        al.add(s);
+//		    }                                        
+//		      for(int i=0;i<al.size();i++){
+//		         String[]up=al.get(i).split(",");
+//		         if(name5.equals(up[1])){
+//		             al.remove(i);
+//		              flag1=1;
+//		             break;
+//		         }
+//		      }
+//		       
+//		     BufferedWriter writer = new BufferedWriter(new FileWriter("customer.txt"));
+//		writer.write("");
+//		writer.flush();
+//		writer.close();
+//		raf.seek(0);
+//		         for(int i=0;i<al.size();i++){
+//		      raf.writeBytes(al.get(i)+"\n");  
+//		         }
+//		         raf.close();
+//		        }
+//		        catch(Exception exp){
+//		        	logger.log(Level.INFO,"Error");
+//		        }
+//		        break;
+//	 			case 6:
+//	 				String filenaMe = "product.txt";
+//	 				Scanner myObj = new Scanner(System.in);
+//	 				logger.log(Level.INFO,"please enter the Name :  ");
+//	 				String Name = myObj.nextLine();
+//	 				  FileInputStream fis = new FileInputStream(filenaMe);
+//	 			             FileOutputStream fos4 = new FileOutputStream("output.txt");
+//	 			            byte[] buffer = new byte[1024];
+//	 			            int bytesRead;
+//	 			            String currentLine = "";
+//
+//	 			            while ((bytesRead = fis.read(buffer)) != -1) {
+//
+//	 			                String chunk = new String(buffer, 0, bytesRead);
+//	 			                int index;
+//	 			                while ((index = chunk.indexOf('\n')) != -1) {
+//	 			                    String line = currentLine + chunk.substring(0, index);
+//	 			                 
+//	 			                    String[] parts = line.split(",");
+//	 			                    String NAME1 = parts[1];
+//	 			                    if (NAME1.equals(Name)) {
+//	 			                    	fos4.write((parts[0]+" "+parts[1]+" "+parts[2]+" "+parts[3]+" "+parts[4]+ "\n").getBytes());
+//	 			                    	logger.log(Level.INFO,parts[0]+" "+parts[1]+" "+parts[2]+" "+parts[3]+" "+parts[4]+ "\n");
+//	 			                    }
+//
+//	 			                    chunk = chunk.substring(index + 1);
+//	 			                    currentLine = "";
+//	 			                }
+//
+//	 			                currentLine += chunk;
+//	 			            }
+//
+//	 			            if (!currentLine.isEmpty()) {
+//	 			            	fos4.write(("Product not found.\n").getBytes());
+//	 			            }
+//                      break;
+//		
+//	 			case 16:
+//	 				String filenaMe7 = "customer.txt"; 
+//	 				Scanner myObj7 = new Scanner(System.in);
+//	 				logger.log(Level.INFO,"please enter the Name :  ");
+//	 				String Name7 = myObj7.nextLine();
+//
+//	 				  FileInputStream fis7 = new FileInputStream(filenaMe7);
+//	 			             FileOutputStream fos7 = new FileOutputStream("output1.txt");
+//
+//	 			            byte[] buffer7 = new byte[1024];
+//	 			            int bytesRead7;
+//	 			            String currentLine7 = "";
+//
+//	 			            while ((bytesRead7 = fis7.read(buffer7)) != -1) {
+//
+//	 			                String chunk7 = new String(buffer7, 0, bytesRead7);
+//
+//	 			                int index7;
+//
+//	 			                while ((index7 = chunk7.indexOf('\n')) != -1) {
+//
+//	 			                    String line7 = currentLine7 + chunk7.substring(0, index7);
+//	 			                 
+//	 			                    String[] parts7 = line7.split(",");
+//	 			                    String NAME7 = parts7[1];
+//	 			                    if (NAME7.equals(Name7)) {
+//	 			                    	fos7.write((parts7[0]+" "+parts7[1]+" "+parts7[2]+" "+parts7[3]+" "+parts7[4]+ "\n").getBytes());
+//	 			                    	logger.log(Level.INFO,parts7[0]+" %s"+parts7[1]+" %s"+parts7[2]+" %s"+parts7[3]+" %s"+parts7[4]+ "%s\n");
+//	 			                    }
+//
+//	 			                    chunk7 = chunk7.substring(index7 + 1);
+//	 			                    currentLine7 = "";
+//	 			                }
+//
+//	 			                currentLine7 += chunk7;
+//	 			            }
+//
+//	 			            if (!currentLine7.isEmpty()) {
+//	 			            	fos7.write(("Product not found.\n").getBytes());
+//	 			            }
+//
+//break;
+//	                   
 		
 	 			case 11:
 	 				 List<Map<String, Object>> salesData = new ArrayList();
