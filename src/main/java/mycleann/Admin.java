@@ -9,7 +9,7 @@ public class Admin
 	Properties r = new Properties();
 	InputStream input888 = null;
 	protected boolean adminlogged;
-	 protected String admin_name=r.getProperty("dbname"), admin_password=r.getProperty("dbpassword");
+	 protected String admin_name, admin_password;
 	 protected String Update;
 	 public Admin(String user_name, String password) 
 	 {
