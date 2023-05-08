@@ -396,7 +396,77 @@ public class FirstClass {
 	                            break;
 
 	                    
-	 		
+	                        case 11:
+	                            List<Map<String, Object>> salesData = new ArrayList<Map<String, Object>>();
+	                            Map<String, Object> sale1 = new HashMap<String, Object>();
+	                            sale1.put("product", "Widget A");
+	                            sale1.put("quantity", 100);
+	                            sale1.put("price", 10.0);
+	                            sale1.put("total", 1000.0);
+	                            salesData.add(sale1);
+
+	                            Map<String, Object> sale2 = new HashMap<String, Object>();
+	                            sale2.put("product", "Widget B");
+	                            sale2.put("quantity", 50);
+	                            sale2.put("price", 20.0);
+	                            sale2.put("total", 1000.0);
+	                            salesData.add(sale2);
+
+	                            BusinessReport report = new BusinessReport();
+	                            report.setTitle("Sales Report");
+	                            report.setDate("2023-05-06");
+	                            report.setSalesData(salesData);
+
+	                            ObjectMapper mapper = new ObjectMapper();
+	                            try {
+	                                String json = mapper.writeValueAsString(report);
+	                                logger.log(Level.INFO, json);
+	                            } catch (JsonProcessingException e) {
+	                                e.printStackTrace();
+	                            }
+	                            break;
+
+	                        case 14:
+	                            List<Worker> availableWorkers = new ArrayList<Worker>();
+	                            availableWorkers.add(new Worker("Adham"));
+	                            availableWorkers.add(new Worker("Muheeb"));
+	                            availableWorkers.add(new Worker("Yazan"));
+	                            availableWorkers.add(new Worker("EZZ"));
+	                            availableWorkers.add(new Worker("Ali"));
+
+	                            List<Orderr> orders = new ArrayList<Orderr>();
+	                            orders.add(new Orderr("Order 1"));
+	                            orders.add(new Orderr("Order 2"));
+	                            orders.add(new Orderr("Order 3"));
+	                            orders.add(new Orderr("Order 4"));
+	                            orders.add(new Orderr("Order 5"));
+	                            orders.add(new Orderr("Order 6"));
+
+	                            OrderDistributor distributor = new OrderDistributor(availableWorkers);
+	                            distributor.distributeOrders(orders);
+	                            break;
+
+	                        case 12:
+	                            Scanner input = new Scanner(System.in);
+
+	                            logger.log(Level.INFO, "Enter customer name: ");
+	                            String customerName = input.nextLine();
+
+	                            logger.log(Level.INFO, "Enter total amount spent: ");
+	                            double totalAmount = input.nextDouble();
+
+	                            double discount = 0.0;
+	                            if (totalAmount > 400.0) {
+	                                discount = 0.1 * totalAmount;
+	                            }
+
+	                            double discountedAmount = totalAmount - discount;
+
+	                            logger.log(Level.INFO, "Customer Name: " + customerName);
+	                            logger.log(Level.INFO, "Total Amount Spent: " + totalAmount + " NIS");
+	                            logger.log(Level.INFO, "Discount: " + discount + " NIS");
+	                            logger.log(Level.INFO, "Discounted Amount: " + discountedAmount + " NIS");
+
 //	 			case 4: 
 //
 //	 				
@@ -672,77 +742,77 @@ public class FirstClass {
 //break;
 //	                   
 		
-	 			case 11:
-	 				 List<Map<String, Object>> salesData = new ArrayList();
-	 			    Map<String, Object> sale1 = new HashMap();
-	 			    sale1.put("product", "Widget A");
-	 			    sale1.put("quantity", 100);
-	 			    sale1.put("price", 10.0);
-	 			    sale1.put("total", 1000.0);
-	 			    salesData.add(sale1);
-	 			    
-	 			    Map<String, Object> sale2 = new HashMap();
-	 			    sale2.put("product", "Widget B");
-	 			    sale2.put("quantity", 50);
-	 			    sale2.put("price", 20.0);
-	 			    sale2.put("total", 1000.0);
-	 			    salesData.add(sale2);
-	 			    
-	 			    BusinessReport report = new BusinessReport();
-	 			    report.setTitle("Sales Report");
-	 			    report.setDate("2023-05-06");
-	 			    report.setSalesData(salesData);
-	 			    
-	 			    ObjectMapper mapper = new ObjectMapper();
-	 			    try {
-	 			      String json = mapper.writeValueAsString(report);
-	 			     logger.log(Level.INFO,json);
-	 			    } catch (JsonProcessingException e) {
-	 			      e.printStackTrace();
-	 			    }
-	 			  break;
-	 					   
-	 			case 14:    List<Worker> availableWorkers = new ArrayList();
-	 		    availableWorkers.add(new Worker("Adham"));
-	 		    availableWorkers.add(new Worker("Muheeb"));
-	 		    availableWorkers.add(new Worker("Yazan"));
-	 		    availableWorkers.add(new Worker("EZZ"));
-	 		    availableWorkers.add(new Worker("Ali"));
-
-	 		    List<Orderr> orders = new ArrayList();
-	 		    orders.add(new Orderr("Order 1"));
-	 		    orders.add(new Orderr("Order 2"));
-	 		    orders.add(new Orderr("Order 3"));
-	 		    orders.add(new Orderr("Order 4"));
-	 		    orders.add(new Orderr("Order 5"));
-	 		    orders.add(new Orderr("Order 6"));
-
-	 		    OrderDistributor distributor = new OrderDistributor(availableWorkers);
-	 		    distributor.distributeOrders(orders);
-	 					 break;	
-	 					 
-	 			case 12:
-
-	 				Scanner input = new Scanner(System.in);
-	 	        
-	 				logger.log(Level.INFO,"Enter customer name: ");
-	 	        String customerName = input.nextLine();
-	 	        
-	 	       logger.log(Level.INFO,"Enter total amount spent: ");
-	 	        double totalAmount = input.nextDouble();
-	 	        
-	 	        double discount = 0.0;
-	 	        if (totalAmount > 400.0) {
-	 	            discount = 0.1 * totalAmount;
-	 	        }
-	 	        
-	 	        double discountedAmount = totalAmount - discount;
-	 	        
-	 	       logger.log(Level.INFO,"Customer Name: " + customerName);
-	 	      logger.log(Level.INFO,"Total Amount Spent: " + totalAmount + " NIS");
-	 	     logger.log(Level.INFO,"Discount: " + discount + " NIS");
-	 	    logger.log(Level.INFO,"Discounted Amount: " + discountedAmount + " NIS");
-	 	    
+//	 			case 11:
+//	 				 List<Map<String, Object>> salesData = new ArrayList();
+//	 			    Map<String, Object> sale1 = new HashMap();
+//	 			    sale1.put("product", "Widget A");
+//	 			    sale1.put("quantity", 100);
+//	 			    sale1.put("price", 10.0);
+//	 			    sale1.put("total", 1000.0);
+//	 			    salesData.add(sale1);
+//	 			    
+//	 			    Map<String, Object> sale2 = new HashMap();
+//	 			    sale2.put("product", "Widget B");
+//	 			    sale2.put("quantity", 50);
+//	 			    sale2.put("price", 20.0);
+//	 			    sale2.put("total", 1000.0);
+//	 			    salesData.add(sale2);
+//	 			    
+//	 			    BusinessReport report = new BusinessReport();
+//	 			    report.setTitle("Sales Report");
+//	 			    report.setDate("2023-05-06");
+//	 			    report.setSalesData(salesData);
+//	 			    
+//	 			    ObjectMapper mapper = new ObjectMapper();
+//	 			    try {
+//	 			      String json = mapper.writeValueAsString(report);
+//	 			     logger.log(Level.INFO,json);
+//	 			    } catch (JsonProcessingException e) {
+//	 			      e.printStackTrace();
+//	 			    }
+//	 			  break;
+//	 					   
+//	 			case 14:    List<Worker> availableWorkers = new ArrayList();
+//	 		    availableWorkers.add(new Worker("Adham"));
+//	 		    availableWorkers.add(new Worker("Muheeb"));
+//	 		    availableWorkers.add(new Worker("Yazan"));
+//	 		    availableWorkers.add(new Worker("EZZ"));
+//	 		    availableWorkers.add(new Worker("Ali"));
+//
+//	 		    List<Orderr> orders = new ArrayList();
+//	 		    orders.add(new Orderr("Order 1"));
+//	 		    orders.add(new Orderr("Order 2"));
+//	 		    orders.add(new Orderr("Order 3"));
+//	 		    orders.add(new Orderr("Order 4"));
+//	 		    orders.add(new Orderr("Order 5"));
+//	 		    orders.add(new Orderr("Order 6"));
+//
+//	 		    OrderDistributor distributor = new OrderDistributor(availableWorkers);
+//	 		    distributor.distributeOrders(orders);
+//	 					 break;	
+//	 					 
+//	 			case 12:
+//
+//	 				Scanner input = new Scanner(System.in);
+//	 	        
+//	 				logger.log(Level.INFO,"Enter customer name: ");
+//	 	        String customerName = input.nextLine();
+//	 	        
+//	 	       logger.log(Level.INFO,"Enter total amount spent: ");
+//	 	        double totalAmount = input.nextDouble();
+//	 	        
+//	 	        double discount = 0.0;
+//	 	        if (totalAmount > 400.0) {
+//	 	            discount = 0.1 * totalAmount;
+//	 	        }
+//	 	        
+//	 	        double discountedAmount = totalAmount - discount;
+//	 	        
+//	 	       logger.log(Level.INFO,"Customer Name: " + customerName);
+//	 	      logger.log(Level.INFO,"Total Amount Spent: " + totalAmount + " NIS");
+//	 	     logger.log(Level.INFO,"Discount: " + discount + " NIS");
+//	 	    logger.log(Level.INFO,"Discounted Amount: " + discountedAmount + " NIS");
+//	 	    
 	 	    
                 default:
                     logger.log(Level.INFO, "Invalid input. Please try again.");
