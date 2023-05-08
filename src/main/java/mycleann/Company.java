@@ -18,8 +18,6 @@ public class Company extends Product
 	
 	protected boolean isAdded;
 	protected static List<Company> clients = new ArrayList<Company>();
-
-   // private static List<Product> PRODUCTS =new ArrayList<Product>();
     private static List<Customers> CUSTOMERS = new ArrayList<Customers>();
     public Company() {
 		isAdded = false;

@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 public class Customers 
-{	static Logger logger = Logger.getLogger(FirstClass.class.getName());
+{	
+	static Logger logger = Logger.getLogger(Customers.class.getName());
 
 
 	protected List<Double> transactionAmounts;
@@ -21,8 +22,6 @@ public class Customers
 	protected boolean add;
 	protected boolean delete;
 	protected boolean update;
-	protected static ArrayList <String[]> find_by_name =new ArrayList<String[]>();
-
 	
 	public Customers()
 	{
@@ -36,7 +35,7 @@ public class Customers
 		phone="";
 	}
 	
-	public void Customers(String id, String name,String email, String address,String phone)
+	public void ret(String id, String name,String email, String address,String phone)
 	{
 		this.id=id;
 		this.name=name;

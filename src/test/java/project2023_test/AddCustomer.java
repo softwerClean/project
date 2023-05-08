@@ -32,7 +32,7 @@ public class AddCustomer {
 
 	@Given("i will to add the customer")
 	public void i_will_to_add_the_customer() {
-		customer.Customers("12028255","ali","salfeet","0594348312", "amamry@gmail.com");
+		customer.ret("12028255","ali","salfeet","0594348312", "amamry@gmail.com");
 
 	}
 
@@ -56,7 +56,7 @@ public class AddCustomer {
 	
 	@Given("i will to add a customer")
 	public void i_will_to_add_a_customer() {
-		customer.Customers("12028255","ali","salfeet","0594348312", "amamry@gmail.com");
+		customer.ret("12028255","ali","salfeet","0594348312", "amamry@gmail.com");
 
 	}
 
