@@ -50,7 +50,7 @@ public class FirstClass {
 		name = scanner.next();
 			logger.log(Level.INFO,"enter the password");
 			password = scanner.next();
-			if(!admin.admin_password.equals(password)||!admin.admin_name.equals(name)) {logger.log(Level.INFO,"the name or password is wrong"); break;}
+			if(! r.getProperty("dbpassword").equals(password)||! r.getProperty("dbname").equals(name)) {logger.log(Level.INFO,"the name or password is wrong"); break;}
 		    admin.login(name, password);
 			for(;;) {
 				logger.log(Level.INFO,"\n3-add product.\n4-update product.\n5-delete product.\n6-search product.\n7-add customer.\n8-update customer.\n9-delete customer\n10-notification user.\n11-Print report.\n12-print discount option.\n13-sent Email.\n14-Order Distribution\n16-Search Customer ");
