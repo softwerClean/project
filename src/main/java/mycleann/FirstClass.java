@@ -27,66 +27,127 @@ public class FirstClass {
 	static Logger logger = Logger.getLogger(FirstClass.class.getName());
 	static RandomAccessFile fromFile;
 
-	public static void func() throws IOException
-	{
-		String print = "please enter the name";
-		String name;
-		String password;
-		Scanner scanner = new Scanner(System.in);
-		int key;
-		Admin admin = new Admin();
-		while(true) {
-		logger.log(Level.INFO,"welcome to our Library , Who are you?\n1-Admin.\n2-User.\n3-Exit the Company.");
-				
-		Properties r = new Properties();
-	
-		FileInputStream stream=new FileInputStream("C:\\Users\\Hp\\Desktop\\mycleanadhamfgdfg\\src\\test\\resources\\config.properties");
-		r.load(stream);		
-		key = scanner.nextInt();
-		switch (key) {
-		case 1:
-			logger.log(Level.INFO,"enter the name");
-		name = scanner.next();
-			logger.log(Level.INFO,"enter the password");
-			password = scanner.next();
-			if(!admin.admin_password.equals(password)||!admin.admin_name.equals(name)) {logger.log(Level.INFO,"the name or password is wrong"); break;}
-		    admin.login(name, password);
-			while(true){
-				logger.log(Level.INFO,"\n3-add product.\n4-update product.\n5-delete product.\n6-search product.\n7-add customer.\n8-update customer.\n9-delete customer\n10-notification user.\n11-Print report.\n12-print discount option.\n13-sent Email.\n14-Order Distribution\n16-Search Customer ");
-	        	 key = scanner.nextInt();
-	        	
-				switch (key) {
-	 			case 3:
-	 				Product p = new Product();
-	 				logger.log(Level.INFO,"please enter the Category");
-	 			String	category = scanner.next();
-	 				logger.log(Level.INFO,print);
-	 				String	NAME = scanner.next();
-	 				logger.log(Level.INFO,"please enter the price");
-	 				String	price = scanner.next();
-	 				logger.log(Level.INFO,"please enter the amount");
-	 				String	amount = scanner.next();
-	 				logger.log(Level.INFO,"please enter the Order ID");
-	 				String	 orderid = scanner.next();
-	 			p.add(admin);
-	 			Company c=new Company();
-	 			c.PutProduct(category, NAME, price, amount, orderid);
-	 			  String filename = "product.txt"; 
-	 		        FileOutputStream fos = null;
-	 		        FileChannel channel = null;
-	 			try 
-	 			{fos = new FileOutputStream(filename, true);
-	            channel = fos.getChannel();
+//	public static void func() throws IOException
+//	{
+//		String print = "please enter the name";
+//		String name;
+//		String password;
+//		Scanner scanner = new Scanner(System.in);
+//		int key;
+//		Admin admin = new Admin();
+//		while(true) {
+//		logger.log(Level.INFO,"welcome to our Library , Who are you?\n1-Admin.\n2-User.\n3-Exit the Company.");
+//				
+//		Properties r = new Properties();
+//	
+//		FileInputStream stream=new FileInputStream("C:\\Users\\Hp\\Desktop\\mycleanadhamfgdfg\\src\\test\\resources\\config.properties");
+//		r.load(stream);		
+//		key = scanner.nextInt();
+//		switch (key) {
+//		case 1:
+//			logger.log(Level.INFO,"enter the name");
+//		name = scanner.next();
+//			logger.log(Level.INFO,"enter the password");
+//			password = scanner.next();
+//			if(!admin.admin_password.equals(password)||!admin.admin_name.equals(name)) {logger.log(Level.INFO,"the name or password is wrong"); break;}
+//		    admin.login(name, password);
+//			while(true){
+//				logger.log(Level.INFO,"\n3-add product.\n4-update product.\n5-delete product.\n6-search product.\n7-add customer.\n8-update customer.\n9-delete customer\n10-notification user.\n11-Print report.\n12-print discount option.\n13-sent Email.\n14-Order Distribution\n16-Search Customer ");
+//	        	 key = scanner.nextInt();
+//	        	
+//				switch (key) {
+//	 			case 3:
+//	 				Product p = new Product();
+//	 				logger.log(Level.INFO,"please enter the Category");
+//	 			String	category = scanner.next();
+//	 				logger.log(Level.INFO,print);
+//	 				String	NAME = scanner.next();
+//	 				logger.log(Level.INFO,"please enter the price");
+//	 				String	price = scanner.next();
+//	 				logger.log(Level.INFO,"please enter the amount");
+//	 				String	amount = scanner.next();
+//	 				logger.log(Level.INFO,"please enter the Order ID");
+//	 				String	 orderid = scanner.next();
+//	 			p.add(admin);
+//	 			Company c=new Company();
+//	 			c.PutProduct(category, NAME, price, amount, orderid);
+//	 			  String filename = "product.txt"; 
+//	 		        FileOutputStream fos = null;
+//	 		        FileChannel channel = null;
+//	 			try 
+//	 			{fos = new FileOutputStream(filename, true);
+//	            channel = fos.getChannel();
+//
+//	 				 String productInfo = category + "," + NAME + "," + price  + "," + amount + "," + orderid + "\n";
+//	 	            ByteBuffer buffer = ByteBuffer.wrap(productInfo.getBytes());
+//	 	            channel.write(buffer);
+//	 	       	logger.log(Level.INFO,"Product information has been written to the file.");
+//	 	        } catch (IOException e) {
+//	 	       	logger.log(Level.INFO,"Error writing to file: " + e.getMessage());
+//	 	        }
+	public static void func() throws IOException {
+	    String print = "Please enter the name:";
+	    Scanner scanner = new Scanner(System.in);
+	    int key;
+	    Admin admin = new Admin();
 
-	 				 String productInfo = category + "," + NAME + "," + price  + "," + amount + "," + orderid + "\n";
-	 	            ByteBuffer buffer = ByteBuffer.wrap(productInfo.getBytes());
-	 	            channel.write(buffer);
-	 	       	logger.log(Level.INFO,"Product information has been written to the file.");
-	 	        } catch (IOException e) {
-	 	       	logger.log(Level.INFO,"Error writing to file: " + e.getMessage());
-	 	        }
-	 			
-	 			 break;
+	    while (true) {
+	        logger.log(Level.INFO, "Welcome to our library. Who are you?\n1-Admin.\n2-User.\n3-Exit the Company.");
+
+	        Properties properties = new Properties();
+	        FileInputStream inputStream = new FileInputStream("C:\\Users\\Hp\\Desktop\\mycleanadhamfgdfg\\src\\test\\resources\\config.properties");
+	        properties.load(inputStream);
+	        
+	        key = scanner.nextInt();
+	        switch (key) {
+	            case 1:
+	                logger.log(Level.INFO, "Enter the name:");
+	                String name = scanner.next();
+	                logger.log(Level.INFO, "Enter the password:");
+	                String password = scanner.next();
+	                
+	                if (!admin.admin_password.equals(password) || !admin.admin_name.equals(name)) {
+	                    logger.log(Level.INFO, "The name or password is wrong");
+	                    break;
+	                }
+	                
+	                admin.login(name, password);
+	                while (true) {
+	                    logger.log(Level.INFO, "\n3-Add product.\n4-Update product.\n5-Delete product.\n6-Search product.\n7-Add customer.\n8-Update customer.\n9-Delete customer.\n10-Notification user.\n11-Print report.\n12-Print discount option.\n13-Send email.\n14-Order distribution.\n16-Search customer.");
+	                    key = scanner.nextInt();
+
+	                    switch (key) {
+	                        case 3:
+	                            Product product = new Product();
+	                            logger.log(Level.INFO, "Please enter the category:");
+	                            String category = scanner.next();
+	                            logger.log(Level.INFO, print);
+	                            String name8 = scanner.next();
+	                            logger.log(Level.INFO, "Please enter the price:");
+	                            String price = scanner.next();
+	                            logger.log(Level.INFO, "Please enter the amount:");
+	                            String amount = scanner.next();
+	                            logger.log(Level.INFO, "Please enter the order ID:");
+	                            String orderid = scanner.next();
+	                            
+	                            product.add(admin);
+	                            Company company = new Company();
+	                            company.PutProduct(category, name8, price, amount, orderid);
+	                            
+	                            String filename = "product.txt";
+	                            try {
+	                            		FileOutputStream fos = new FileOutputStream(filename, true); 
+	                            		FileChannel channel = fos.getChannel() ;
+	                                String productInfo = category + "," + name + "," + price  + "," + amount + "," + orderid + "\n";
+	                                ByteBuffer buffer = ByteBuffer.wrap(productInfo.getBytes());
+	                                channel.write(buffer);
+	                                logger.log(Level.INFO, "Product information has been written to the file.");
+	                            } catch (IOException e) {
+	                                logger.log(Level.INFO, "Error writing to file: " + e.getMessage());
+	                            }
+	                            break;
+	        
+
 	 		
 	 			case 4: 
 
@@ -436,9 +497,14 @@ break;
 	 	    logger.log(Level.INFO,"Discounted Amount: " + discountedAmount + " NIS");
 	 	    
 	 	    
-	 			default :
-	 				logger.log(Level.INFO,"GOOD BAY.");
-	 				break;
+                default:
+                    logger.log(Level.INFO, "Invalid input. Please try again.");
+                    break;
+            
+        
+
+
+
 
 				}
 	 		    
@@ -461,9 +527,14 @@ break;
 		case 3:
 				logger.log(Level.INFO,"GOOD BAY.");
 				break;
-default :
-	logger.log(Level.INFO,"GOOD BAY.");
-	break;
+        default:
+            logger.log(Level.INFO, "Invalid input. Please try again.");
+            break;
+    
+
+
+
+
 
 	}break;
 		}		
