@@ -2,8 +2,6 @@ package mycleann;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.Properties;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -36,7 +34,7 @@ public class FirstClass {
 		Scanner scanner = new Scanner(System.in);
 		int key;
 		Admin admin = new Admin();
-		for(;;) {
+		while(true) {
 		logger.log(Level.INFO,"welcome to our Library , Who are you?\n1-Admin.\n2-User.\n3-Exit the Company.");
 				
 		Properties r = new Properties();
@@ -52,7 +50,7 @@ public class FirstClass {
 			password = scanner.next();
 			if(!admin.admin_password.equals(password)||!admin.admin_name.equals(name)) {logger.log(Level.INFO,"the name or password is wrong"); break;}
 		    admin.login(name, password);
-			for(;;) {
+			while(true){
 				logger.log(Level.INFO,"\n3-add product.\n4-update product.\n5-delete product.\n6-search product.\n7-add customer.\n8-update customer.\n9-delete customer\n10-notification user.\n11-Print report.\n12-print discount option.\n13-sent Email.\n14-Order Distribution\n16-Search Customer ");
 	        	 key = scanner.nextInt();
 	        	
@@ -371,7 +369,6 @@ break;
 	 			    sale1.put("quantity", 100);
 	 			    sale1.put("price", 10.0);
 	 			    sale1.put("total", 1000.0);
-	 			  //  sale1.put("", "/n");
 	 			    salesData.add(sale1);
 	 			    
 	 			    Map<String, Object> sale2 = new HashMap();
@@ -379,16 +376,13 @@ break;
 	 			    sale2.put("quantity", 50);
 	 			    sale2.put("price", 20.0);
 	 			    sale2.put("total", 1000.0);
-		 		//	sale2.put("", "/n");
 	 			    salesData.add(sale2);
 	 			    
-	 			    // create a report object and populate it with the sales data
 	 			    BusinessReport report = new BusinessReport();
 	 			    report.setTitle("Sales Report");
 	 			    report.setDate("2023-05-06");
 	 			    report.setSalesData(salesData);
 	 			    
-	 			    // convert the report object to JSON using Jerkson
 	 			    ObjectMapper mapper = new ObjectMapper();
 	 			    try {
 	 			      String json = mapper.writeValueAsString(report);

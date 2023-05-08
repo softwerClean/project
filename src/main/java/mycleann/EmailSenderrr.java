@@ -5,7 +5,6 @@ import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Session;
 import javax.mail.Transport;
-import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
@@ -22,7 +21,7 @@ public class EmailSenderrr {
         this.password = password;
     }
 
-    public void sendEmail(String recipient, String orderDetails) throws AddressException, MessagingException {
+    public void sendEmail(String recipient, String orderDetails) throws MessagingException {
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.starttls.enable", "true");
@@ -30,6 +29,7 @@ public class EmailSenderrr {
         properties.put("mail.smtp.port", port);
 
         Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
+        	@Override
             protected javax.mail.PasswordAuthentication getPasswordAuthentication() {
                 return new javax.mail.PasswordAuthentication(username, password);
             }

@@ -15,7 +15,7 @@ public class EmailBuilder {
         message = new MimeMessage(session);
     }
 
-    public EmailBuilder setFrom(String from) throws AddressException, MessagingException {
+    public EmailBuilder setFrom(String from) throws MessagingException {
         message.setFrom(new InternetAddress(from));
         return this;
     }
