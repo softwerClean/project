@@ -13,9 +13,10 @@ public class Admin
 		 
 		 this.adminlogged=false;
 	 }
-	 public Admin() {
-		 this.admin_name="adham_12028277";
-		 this.admin_password="123456789@adham";
+	 public Admin() 
+	 {
+		 
+		 this.adminlogged=false;
 	 }
 
 public boolean login(String user_name, String password)
