@@ -30,7 +30,9 @@ public class FirstClass {
 
 	public static void main(String[] args) throws IOException 
 	{
-		String name,password;
+		String print = "please enter the name";
+		String name;
+		String password;
 		Scanner scanner = new Scanner(System.in);
 		int key;
 		Admin admin = new Admin();
@@ -38,7 +40,7 @@ public class FirstClass {
 		logger.log(Level.INFO,"welcome to our Library , Who are you?\n1-Admin.\n2-User.\n3-Exit the Company.");
 				
 		Properties r = new Properties();
-		InputStream input888 = null;
+	
 		FileInputStream stream=new FileInputStream("C:\\Users\\Hp\\Desktop\\mycleanadhamfgdfg\\src\\test\\resources\\config.properties");
 		r.load(stream);		
 		key = scanner.nextInt();
@@ -59,7 +61,7 @@ public class FirstClass {
 	 				Product p = new Product();
 	 				logger.log(Level.INFO,"please enter the Category");
 	 			String	category = scanner.next();
-	 				logger.log(Level.INFO,"please enter the name");
+	 				logger.log(Level.INFO,print);
 	 				String	NAME = scanner.next();
 	 				logger.log(Level.INFO,"please enter the price");
 	 				String	price = scanner.next();
@@ -90,7 +92,7 @@ public class FirstClass {
 	 			case 4: 
 
 	 				
-	 				logger.log(Level.INFO,"please enter the name");
+	 				logger.log(Level.INFO,print);
 	 				 String name1 = scanner.next();
 	 				
 	 				File file1 = new File("product.txt");
@@ -107,7 +109,7 @@ public class FirstClass {
 	 	                 {
 	 	                	logger.log(Level.INFO,"please enter the Category");
 	 	   	 			String	category1 = scanner.next();
-	 	   	 				logger.log(Level.INFO,"please enter the name");
+	 	   	 				logger.log(Level.INFO,print);
 	 	   	 				String	NAME1 = scanner.next();
 	 	   	 				logger.log(Level.INFO,"please enter the price");
 	 	   	 				String	price1 = scanner.next();
@@ -137,7 +139,7 @@ public class FirstClass {
 	 			case 5:
 	 			
 	 				
-		 				logger.log(Level.INFO,"please enter the name");
+		 				logger.log(Level.INFO,print);
 		 				 String name2 = scanner.next();
 		 				
 	 		       int flag=0;
@@ -178,7 +180,7 @@ public class FirstClass {
 	 				Customers customer = new Customers();
 	 				logger.log(Level.INFO,"please enter the id");
 	 				String id = scanner.next();
-	 				logger.log(Level.INFO,"please enter the name");
+	 				logger.log(Level.INFO,print);
 	 				 String name3 = scanner.next();
 	 				logger.log(Level.INFO,"please enter the email");
 	 				 String email = scanner.next();
@@ -205,7 +207,7 @@ public class FirstClass {
 	 			
 	 			 break;
 	 			case 8: 
-	 				logger.log(Level.INFO,"please enter the name");
+	 				logger.log(Level.INFO,print);
 				 String name4 = scanner.next();
 	 				
 				File file3 = new File("customer.txt");
@@ -222,7 +224,7 @@ public class FirstClass {
 	                 {
 	                	 logger.log(Level.INFO,"please enter the id");
 	 	 				String id1 = scanner.next();
-	 	 				logger.log(Level.INFO,"please enter the name");
+	 	 				logger.log(Level.INFO,print);
 	 	 				 String name31 = scanner.next();
 	 	 				logger.log(Level.INFO,"please enter the email");
 	 	 				 String email1 = scanner.next();
@@ -246,7 +248,7 @@ public class FirstClass {
 	            newFILE1.close();         
 		    break;
 	 			case 9:
-	 				logger.log(Level.INFO,"please enter the name");
+	 				logger.log(Level.INFO,print);
 	 				 String name5 = scanner.next();
 	 				
 		       int flag1=0;
@@ -284,7 +286,7 @@ public class FirstClass {
 	 			case 6:
 	 				String filenaMe = "product.txt";
 	 				Scanner myObj = new Scanner(System.in);
-	 				logger.log(Level.INFO,"please enter the Name :  ");
+	 				logger.log(Level.INFO,print);
 	 				String Name = myObj.nextLine();
 	 				  FileInputStream fis = new FileInputStream(filenaMe);
 	 			             FileOutputStream fos4 = new FileOutputStream("output.txt");
@@ -321,7 +323,7 @@ public class FirstClass {
 	 			case 16:
 	 				String filenaMe7 = "customer.txt"; 
 	 				Scanner myObj7 = new Scanner(System.in);
-	 				logger.log(Level.INFO,"please enter the Name :  ");
+	 				logger.log(Level.INFO,print);
 	 				String Name7 = myObj7.nextLine();
 
 	 				  FileInputStream fis7 = new FileInputStream(filenaMe7);
@@ -433,6 +435,12 @@ break;
 	 	      logger.log(Level.INFO,"Total Amount Spent: " + totalAmount + " NIS");
 	 	     logger.log(Level.INFO,"Discount: " + discount + " NIS");
 	 	    logger.log(Level.INFO,"Discounted Amount: " + discountedAmount + " NIS");
+	 	    
+	 	    
+	 			default :
+	 				logger.log(Level.INFO,"GOOD BAY.");
+	 				break;
+
 				}
 	 		    
 	 		  
@@ -454,6 +462,9 @@ break;
 		case 3:
 				logger.log(Level.INFO,"GOOD BAY.");
 				break;
+default :
+	logger.log(Level.INFO,"GOOD BAY.");
+	break;
 
 	}break;
 			
