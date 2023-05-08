@@ -1,10 +1,16 @@
 package mycleann;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.util.Properties;
+
 public class Admin
 {
-	
+
+	Properties r = new Properties();
+	InputStream input888 = null;
 	protected boolean adminlogged;
-	 protected String admin_name, admin_password;
+	 protected String admin_name=r.getProperty("dbname"), admin_password=r.getProperty("dbpassword");
 	 protected String Update;
 	 public Admin(String user_name, String password) 
 	 {
@@ -15,8 +21,9 @@ public class Admin
 	 }
 	 public Admin() 
 	 {
-		 
-		 this.adminlogged=false;
+		 this.admin_name="adham_12028277";
+		 this.admin_password="123456789@adham";				 
+				 
 	 }
 
 public boolean login(String user_name, String password)

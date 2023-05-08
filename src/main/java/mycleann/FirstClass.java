@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.RandomAccessFile;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,8 +30,8 @@ public class FirstClass {
 	static Logger logger = Logger.getLogger(FirstClass.class.getName());
 	static RandomAccessFile fromFile;
 
-	public static void main(String[] args) throws IOException {
-		
+	public static void main(String[] args) throws IOException 
+	{
 		String name,password;
 		Scanner scanner = new Scanner(System.in);
 		int key;
@@ -37,8 +39,11 @@ public class FirstClass {
 		for(;;) {
 		logger.log(Level.INFO,"welcome to our Library , Who are you?\n1-Admin.\n2-User.\n3-Exit the Company.");
 				
-
-   	 key = scanner.nextInt();
+		Properties r = new Properties();
+		InputStream input888 = null;
+		FileInputStream stream=new FileInputStream("C:\\Users\\Hp\\Desktop\\mycleanadhamfgdfg\\src\\test\\resources\\config.properties");
+		r.load(stream);		
+		key = scanner.nextInt();
 		switch (key) {
 		case 1:
 			logger.log(Level.INFO,"enter the name");
