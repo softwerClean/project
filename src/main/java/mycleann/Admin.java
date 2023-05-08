@@ -13,8 +13,8 @@ public class Admin
 	 protected String Update;
 	 public Admin(String user_name, String password) 
 	 {
-		 r.getProperty("dbname").equals(user_name);
-		 r.getProperty("dbpassword").equals(password);
+		this.admin_name.equals(password);
+		 this.admin_password.equals(password);
 		 
 		 this.adminlogged=false;
 	 }
