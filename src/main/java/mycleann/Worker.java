@@ -6,7 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Worker {
-	static Logger logger = Logger.getLogger(FirstClass.class.getName());
+	static Logger logger = Logger.getLogger(Worker.class.getName());
 
     private String name;
     private boolean available;
@@ -40,9 +40,11 @@ public class Worker {
     
     public void assignOrders(List<Orderr> orders) {
         this.orders = orders;
-        logger.log(Level.INFO,name + " has been assigned " + orders.size() + " orders:");
+      //  logger.log(Level.INFO,name + " has been assigned " + orders.size() + " orders:");
+        System.out.println(name + " has been assigned " + orders.size() + " orders:");
         for (Orderr order : orders) {
-        	logger.log(Level.INFO,"- " + order.getName());
+        //	logger.log(Level.INFO,"- " + order.getName());
+        	System.out.println("- " + order.getName());
         }
       }
 }
