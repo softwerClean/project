@@ -1,6 +1,5 @@
 package mycleann;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Properties;
 import java.io.BufferedWriter;
@@ -347,7 +346,7 @@ public class FirstClass {
 	 			                    String NAME7 = parts7[1];
 	 			                    if (NAME7.equals(Name7)) {
 	 			                    	fos7.write((parts7[0]+" "+parts7[1]+" "+parts7[2]+" "+parts7[3]+" "+parts7[4]+ "\n").getBytes());
-	 			                    	logger.log(Level.INFO,parts7[0]+" "+parts7[1]+" "+parts7[2]+" "+parts7[3]+" "+parts7[4]+ "\n");
+	 			                    	logger.log(Level.INFO,parts7[0]+" %s"+parts7[1]+" %s"+parts7[2]+" %s"+parts7[3]+" %s"+parts7[4]+ "%s\n");
 	 			                    }
 
 	 			                    chunk7 = chunk7.substring(index7 + 1);
