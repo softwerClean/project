@@ -28,7 +28,7 @@ public class FirstClass {
 	static Logger logger = Logger.getLogger(FirstClass.class.getName());
 	static RandomAccessFile fromFile;
 
-	public static void main(String[] args) throws IOException 
+	public static void func() throws IOException
 	{
 		String print = "please enter the name";
 		String name;
@@ -286,7 +286,7 @@ public class FirstClass {
 	 			case 6:
 	 				String filenaMe = "product.txt";
 	 				Scanner myObj = new Scanner(System.in);
-	 				logger.log(Level.INFO,print);
+	 				logger.log(Level.INFO,"please enter the Name :  ");
 	 				String Name = myObj.nextLine();
 	 				  FileInputStream fis = new FileInputStream(filenaMe);
 	 			             FileOutputStream fos4 = new FileOutputStream("output.txt");
@@ -323,7 +323,7 @@ public class FirstClass {
 	 			case 16:
 	 				String filenaMe7 = "customer.txt"; 
 	 				Scanner myObj7 = new Scanner(System.in);
-	 				logger.log(Level.INFO,print);
+	 				logger.log(Level.INFO,"please enter the Name :  ");
 	 				String Name7 = myObj7.nextLine();
 
 	 				  FileInputStream fis7 = new FileInputStream(filenaMe7);
@@ -467,8 +467,14 @@ default :
 	break;
 
 	}break;
-			
-		}
+		}		
+	}
+	
+	
+	public static void main(String[] args) throws IOException  
+	{
+		
+		func();
 	
 }
 
