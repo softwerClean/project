@@ -9,7 +9,7 @@ public class Admin
 	Properties r = new Properties();
 	InputStream input888 = null;
 	protected boolean adminlogged;
-	// protected String admin_name=r.getProperty("dbname"), admin_password=r.getProperty("dbpassword");
+	 protected String admin_name=r.getProperty("dbname"), admin_password=r.getProperty("dbpassword");
 	 protected String Update;
 	 public Admin(String user_name, String password) 
 	 {
@@ -20,17 +20,17 @@ public class Admin
 	 }
 	 public Admin() 
 	 {
-		// this.admin_name="adham_12028277";
-		// this.admin_password="123456789@adham";				 
-		 r.getProperty("dbname");
-		 r.getProperty("dbpassword");
+		this.admin_name="adham_12028277";
+		this.admin_password="123456789@adham";				 
+//		 r.getProperty("dbname");
+//		 r.getProperty("dbpassword");
 	 }
 
 public boolean login(String user_name, String password)
 {
 	
-	this.adminlogged=this. r.getProperty("dbname").equals(user_name);
-	this.adminlogged=this. r.getProperty("dbpassword").equals(password);
+	this.adminlogged=this.admin_name.equals(user_name);
+	this.adminlogged=this.admin_password.equals(password);
 
 	return this.adminlogged;
 
