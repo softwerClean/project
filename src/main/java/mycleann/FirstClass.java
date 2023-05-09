@@ -103,45 +103,43 @@ public class FirstClass {
 	                    	break;
 	                    
 	                    
-	                        case 4:
-	                            logger.log(Level.INFO, print);
-	                            String name1 = scanner.next();
-	                            
-	                            File file1 = new File("product.txt");
-	                            Scanner in1 = new Scanner(file1);
-	                            
-	                            String string1;
-	                            String n = "";
-	                            String str = "";
-	                            while (in1.hasNextLine()) {
-	                                string1 = in1.nextLine();
-	                                String[] splited1 = string1.split(",");
-	                                if (splited1[1].equals(name1)) {
-	                                    logger.log(Level.INFO, "please enter the Category");
-	                                    String category1 = scanner.next();
-	                                    logger.log(Level.INFO, print);
-	                                    String NAME1 = scanner.next();
-	                                    logger.log(Level.INFO, "please enter the price");
-	                                    String price1 = scanner.next();
-	                                    logger.log(Level.INFO, "please enter the amount");
-	                                    String amount1 = scanner.next();
-	                                    logger.log(Level.INFO, "please enter the Order ID");
-	                                    String orderid1 = scanner.next();
-	                                    str = category1 + "," + NAME1 + "," + price1 + "," + amount1 + "," + orderid1;
-	                                    n += str + "\n";
-	                                } else {
-	                                    n += string1 + "\n";
-	                                }
-	                                continue;
+	                    case 4:
+	                        logger.log(Level.INFO, print);
+	                        String name1 = scanner.next();
+
+	                        File file1 = new File("product.txt");
+	                        Scanner in1 = new Scanner(file1);
+
+	                        String string1;
+	                        StringBuilder n = new StringBuilder();
+	                        String str = "";
+	                        while (in1.hasNextLine()) {
+	                            string1 = in1.nextLine();
+	                            String[] splited1 = string1.split(",");
+	                            if (splited1[1].equals(name1)) {
+	                                logger.log(Level.INFO, "please enter the Category");
+	                                String category1 = scanner.next();
+	                                logger.log(Level.INFO, print);
+	                                String NAME1 = scanner.next();
+	                                logger.log(Level.INFO, "please enter the price");
+	                                String price1 = scanner.next();
+	                                logger.log(Level.INFO, "please enter the amount");
+	                                String amount1 = scanner.next();
+	                                logger.log(Level.INFO, "please enter the Order ID");
+	                                String orderid1 = scanner.next();
+	                                str = category1 + "," + NAME1 + "," + price1 + "," + amount1 + "," + orderid1;
+	                                n.append(str).append("\n");
+	                            } else {
+	                                n.append(string1).append("\n");
 	                            }
+	                        }
 
+	                        in1.close();
+	                        FileWriter newFile = new FileWriter("product.txt");
+	                        newFile.write(n.toString());
+	                        newFile.close();
+	                        break;
 
-
-	                            in1.close();
-	                            FileWriter newFile = new FileWriter("product.txt");
-	                            newFile.write(n);
-	                            newFile.close();
-	                            break;
 
 	                        case 5:
 	                            logger.log(Level.INFO, print);
