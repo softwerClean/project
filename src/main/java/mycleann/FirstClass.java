@@ -25,12 +25,48 @@ import java.nio.channels.FileChannel;
 public class FirstClass {
 	static Logger logger = Logger.getLogger(FirstClass.class.getName());
 	static RandomAccessFile fromFile;
+    static Scanner scanner = new Scanner(System.in);
+    static String print = "Please enter the name:";
+    static Admin admin = new Admin();
 
-	public static void func() throws IOException {
-	    String print = "Please enter the name:";
-	    Scanner scanner = new Scanner(System.in);
+	
+	public static void adminMenue()
+	{
+          Product product = new Product();
+          logger.log(Level.INFO, "Please enter the category:");
+          String category = scanner.next();
+          logger.log(Level.INFO, print);
+          String name8 = scanner.next();
+          logger.log(Level.INFO, "Please enter the price:");
+          String price = scanner.next();
+          logger.log(Level.INFO, "Please enter the amount:");
+          String amount = scanner.next();
+          logger.log(Level.INFO, "Please enter the order ID:");
+          String orderid = scanner.next();
+          
+          product.add(admin);
+          Company company = new Company();
+          company.PutProduct(category, name8, price, amount, orderid);
+          
+          String filename = "product.txt";
+          try {
+          		FileOutputStream fos = new FileOutputStream(filename, true); 
+          		FileChannel channel = fos.getChannel() ;
+              String productInfo = category + "," + name8 + "," + price  + "," + amount + "," + orderid + "\n";
+              ByteBuffer buffer = ByteBuffer.wrap(productInfo.getBytes());
+              channel.write(buffer);
+              logger.log(Level.INFO, "Product information has been written to the file.");
+          } catch (IOException e) {
+              logger.log(Level.INFO, "Error writing to file: " + e.getMessage());
+          }
+          
+	}
+	
+	
+	
+	
+	public static void function() throws IOException {
 	    int key;
-	    Admin admin = new Admin();
 
 	    while (true) {
 	        logger.log(Level.INFO, "Welcome to our library. Who are you?\n1-Admin.\n2-User.\n3-Exit the Company.");
@@ -58,36 +94,15 @@ public class FirstClass {
 	                logger.log(Level.INFO, "\n3-Add product.\n4-Update product.\n5-Delete product.\n6-Search product.\n7-Add customer.\n8-Update customer.\n9-Delete customer.\n10-Notification user.\n11-Print report.\n12-Print discount option.\n13-Send email.\n14-Order distribution.\n16-Search customer.");
 	                key = scanner.nextInt();
 
-	                    switch (key) {
-	                        case 3:
-	                            Product product = new Product();
-	                            logger.log(Level.INFO, "Please enter the category:");
-	                            String category = scanner.next();
-	                            logger.log(Level.INFO, print);
-	                            String name8 = scanner.next();
-	                            logger.log(Level.INFO, "Please enter the price:");
-	                            String price = scanner.next();
-	                            logger.log(Level.INFO, "Please enter the amount:");
-	                            String amount = scanner.next();
-	                            logger.log(Level.INFO, "Please enter the order ID:");
-	                            String orderid = scanner.next();
-	                            
-	                            product.add(admin);
-	                            Company company = new Company();
-	                            company.PutProduct(category, name8, price, amount, orderid);
-	                            
-	                            String filename = "product.txt";
-	                            try {
-	                            		FileOutputStream fos = new FileOutputStream(filename, true); 
-	                            		FileChannel channel = fos.getChannel() ;
-	                                String productInfo = category + "," + name + "," + price  + "," + amount + "," + orderid + "\n";
-	                                ByteBuffer buffer = ByteBuffer.wrap(productInfo.getBytes());
-	                                channel.write(buffer);
-	                                logger.log(Level.INFO, "Product information has been written to the file.");
-	                            } catch (IOException e) {
-	                                logger.log(Level.INFO, "Error writing to file: " + e.getMessage());
-	                            }
-	                            break;
+	                    switch (key)
+	                    {
+	                      
+	                    
+	                    case 3:
+	                    	adminMenue();
+	                    	break;
+	                    
+	                    
 	                        case 4:
 	                            logger.log(Level.INFO, print);
 	                            String name1 = scanner.next();
@@ -460,7 +475,7 @@ public class FirstClass {
 	public static void main(String[] args) throws IOException  
 	{
 		
-		func();
+		function();
 	
 }
 
