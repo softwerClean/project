@@ -1,153 +1,3 @@
-//package mycleann;
-//
-//import java.util.ArrayList;
-//import java.util.List;
-//import java.util.logging.Level;
-//import java.util.logging.Logger;
-//
-//public class Customers {
-//
-//    private static final Logger logger = Logger.getLogger(Customers.class.getName());
-//    protected static ArrayList <String[]> customers =new ArrayList<String[]>();
-//    private String id;
-//    private String name;
-//    private String address;
-//    private String email;
-//    private String phone;
-//    protected boolean add;
-//    private List<Double> transactionAmounts = new ArrayList<Double>();
-//    private double totalSpending;
-//    private boolean eligibleForDiscount;
-//
-//    public Customers(String id, String name, String address, String phone,String email ) {
-//        this.id = id;
-//        this.name = name;
-//        this.address = address;
-//        this.phone = phone;
-//        this.email = email;
-//      
-//    }
-//
-//    public Customers() {
-//		// TODO Auto-generated constructor stub
-//	}
-//
-//	public boolean add(Admin admin) {
-//        if (!admin.isLogged()) {
-//            logger.log(Level.INFO, "Admin is not logged in.");
-//            return false;
-//        }
-//
-//        String[] customer = {id, name, address, phone};
-//        if (Customers.customers.add(customer)) {
-//            return true;
-//        } else {
-//            logger.log(Level.WARNING, "Failed to add customer.");
-//            return false;
-//        }
-//    }
-//
-//    public boolean delete(Admin admin) {
-//        if (!admin.isLogged()) {
-//            logger.log(Level.INFO, "Admin is not logged in.");
-//            return false;
-//        }
-//
-//        return true;
-//    }
-//
-//    public boolean update(Admin admin) {
-//        if (!admin.isLogged()) {
-//            logger.log(Level.INFO, "Admin is not logged in.");
-//            return false;
-//        }
-//
-//        return true;
-//    }
-//
-//    public void addTransaction(double amount) {
-//        transactionAmounts.add(amount);
-//        totalSpending += amount;
-//        if (totalSpending > 400) {
-//            eligibleForDiscount = true;
-//        }
-//    }
-//
-//    public double getTotalSpending() {
-//        return totalSpending;
-//    }
-//
-//    public boolean isEligibleForDiscount() {
-//        return eligibleForDiscount;
-//    }
-//
-//    public boolean applyDiscount() {
-//        if (eligibleForDiscount) {
-//            double discountAmount = totalSpending * 0.1;
-//            logger.log(Level.INFO, name + " is eligible for a 10% discount of " + discountAmount + " NIS.");
-//            return true;
-//        } else {
-//            logger.log(Level.INFO, name + " is not eligible for the discount.");
-//            return false;
-//        }
-//    }
-//
-//    public String getId() {
-//        return id;
-//    }
-//
-//    public void setId(String id) {
-//        this.id = id;
-//    }
-//
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//	public boolean UpdateMissing(Admin admin) 
-//{
-//	boolean update = false;
-//	
-//	if(admin.isLogged()) 
-//	{
-//		
-//		update= true;
-//
-//	}
-//	return  update;
-//}
-//    public String getAddress() {
-//        return address;
-//    }
-//
-//    public void setAddress(String address) {
-//        this.address = address;
-//    }
-//
-//    public String getEmail() {
-//        return email;
-//    }
-//
-//    public void setEmail(String email) {
-//        this.email = email;
-//    }
-//
-//    public String getPhone() {
-//        return phone;
-//    }
-//
-//    public void setPhone(String phone) {
-//        this.phone = phone;
-//    }
-//	public boolean addded() {
-//	return this.add;
-//}
-//}
-
-
 package mycleann;
 
 import java.util.ArrayList;
@@ -168,16 +18,16 @@ public class Customers
 	protected String address;
 	protected String email;
 	protected String phone;
-	protected static ArrayList <String[]> customers =new ArrayList<String[]>();
+	protected static ArrayList <String[]> customerList = new ArrayList<String[]>();
 	protected boolean add;
 	protected boolean delete;
-	protected boolean update;
+	protected boolean isUpdated ;
 	
 	public Customers()
 	{
 		this.add=false;
 		this.delete=false;
-		this.update=false;	
+		this.isUpdated =false;	
 		id="";
 		name="";
 		address="";
@@ -204,7 +54,7 @@ public class Customers
 	if(admin.isLogged())
 	{
 		String [] customer2 = {this.id,this.name,this.address,this.phone};
-		if(Customers.customers.add(customer2))
+		if(Customers.customerList.add(customer2))
 			add=true;
 	}
 	else
@@ -238,38 +88,38 @@ public class Customers
 
 		public boolean UpdateMissing(Admin admin) 
 	{
-		update= false;
+			isUpdated = false;
 		
 		if(admin.isLogged()) 
 		{
 			
-			update= true;
+			isUpdated = true;
 
 		}
-		return  update;
+		return  isUpdated ;
 	}
 	public boolean updateUp(Admin admin) 
 	{
-		update= false;
+		isUpdated = false;
 		
 		if(admin.isLogged()) 
 		{
-			update= true;
+			isUpdated = true;
 
 		}
-		return  update;
+		return  isUpdated ;
 	}
 
 	public boolean update() {
-		return this.update;
+		return this.isUpdated ;
 	}
 	
 	
-	public String GetEmail() {
+	public String getEmail() {
 		return email;
 	}
 
-	public void SetEmail(String email) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
 	

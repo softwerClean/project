@@ -9,7 +9,8 @@ public class Admin
 	Properties r = new Properties();
 	InputStream input888 = null;
 	protected boolean adminlogged;
-	protected String adminName, admin_password;
+	protected String adminName;
+	protected String  admin_password;
 	 protected String Update;
 	 public Admin(String userName, String password) {
 			this.adminName = userName;
