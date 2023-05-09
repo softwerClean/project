@@ -364,8 +364,7 @@ public class FirstClass {
 	                                String json = mapper.writeValueAsString(report);
 	                                logger.log(Level.INFO, json);
 	                            } catch (JsonProcessingException e) {
-	                                e.printStackTrace();
-	                            }
+	                            	logger.log(Level.SEVERE, "Error while processing JSON: " + e.getMessage());	                            }
 	                            break;
 
 	                        case 14:
