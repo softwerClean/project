@@ -8,7 +8,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.RandomAccessFile;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,21 +41,22 @@ public class FirstClass {
 	        
 	        key = scanner.nextInt();
 	        switch (key) {
-	            case 1:
-	                logger.log(Level.INFO, "Enter the name:");
-	                String name = scanner.next();
-	                logger.log(Level.INFO, "Enter the password:");
-	                String password = scanner.next();
-	                
-	                if (!admin.adminPassword.equals(password) || !admin.adminName.equals(name)) {
-	                    logger.log(Level.INFO, "The name or password is wrong");
-	                    break;
-	                }
-	                
-	                admin.login(name, password);
-	                while (true) {
-	                    logger.log(Level.INFO, "\n3-Add product.\n4-Update product.\n5-Delete product.\n6-Search product.\n7-Add customer.\n8-Update customer.\n9-Delete customer.\n10-Notification user.\n11-Print report.\n12-Print discount option.\n13-Send email.\n14-Order distribution.\n16-Search customer.");
-	                    key = scanner.nextInt();
+	        
+	        case 1:
+	            logger.log(Level.INFO, "Enter the name:");
+	            String name = scanner.next();
+	            logger.log(Level.INFO, "Enter the password:");
+	            String password = scanner.next();
+
+	            if (!admin.adminPassword.equals(password) || !admin.adminName.equals(name)) {
+	                logger.log(Level.INFO, "The name or password is wrong");
+	                break;
+	            }
+
+	            admin.login(name, password);
+	            while (true) {
+	                logger.log(Level.INFO, "\n3-Add product.\n4-Update product.\n5-Delete product.\n6-Search product.\n7-Add customer.\n8-Update customer.\n9-Delete customer.\n10-Notification user.\n11-Print report.\n12-Print discount option.\n13-Send email.\n14-Order distribution.\n16-Search customer.");
+	                key = scanner.nextInt();
 
 	                    switch (key) {
 	                        case 3:
@@ -424,8 +424,9 @@ public class FirstClass {
 	 		  
 
 	 				
-	 		        
+
 	 	        }
+
 		case 2 :
 				
 				logger.log(Level.INFO,"1-Are you a new customer");
