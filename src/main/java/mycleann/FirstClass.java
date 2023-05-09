@@ -28,7 +28,7 @@ public class FirstClass {
     static Scanner scanner = new Scanner(System.in);
     static String print = "Please enter the name:";
     static Admin admin = new Admin();
-
+static String filenameproperities="customer.txt";
 	
 	public static void adminMenue()
 	{
@@ -205,7 +205,7 @@ public class FirstClass {
 	                        case 8:
 	                            logger.log(Level.INFO, "Please enter the name of the customer to edit:");
 	                            String nameToEdit = scanner.next();
-	                            File file = new File("customer.txt");
+	                            File file = new File(filenameproperities);
 	                            Scanner in = new Scanner(file);
 	                            String m;
 	                            StringBuilder updatedCustomers = new StringBuilder();
@@ -231,7 +231,7 @@ public class FirstClass {
 	                            }
 	                            in.close();
 	                            try {
-	                                FileWriter fileWriter = new FileWriter("customer.txt");
+	                                FileWriter fileWriter = new FileWriter(filenameproperities);
 	                                fileWriter.write(updatedCustomers.toString());
 	                            } catch (IOException e) {
 	                                logger.log(Level.INFO, "Error writing to file: " + e.getMessage());
@@ -244,7 +244,7 @@ public class FirstClass {
 	                            int flag1 = 0;
 	                            try {
 	                                ArrayList<String> al = new ArrayList<String>();
-	                                RandomAccessFile raf = new RandomAccessFile("customer.txt", "rw");
+	                                RandomAccessFile raf = new RandomAccessFile(filenameproperities, "rw");
 	                                raf.seek(0);
 	                                String s;
 	                                while ((s = raf.readLine()) != null) {
@@ -258,7 +258,7 @@ public class FirstClass {
 	                                        break;
 	                                    }
 	                                }
-	                                BufferedWriter writer = new BufferedWriter(new FileWriter("customer.txt"));
+	                                BufferedWriter writer = new BufferedWriter(new FileWriter(filenameproperities));
 	                                writer.write("");
 	                                writer.flush();
 	                                writer.close();
@@ -309,7 +309,7 @@ public class FirstClass {
 	                            break;
 
 	                        case 16:
-	                            String filename7 = "customer.txt";
+	                            String filename7 = filenameproperities;
 	                            Scanner scanner7 = new Scanner(System.in);
 	                            logger.log(Level.INFO, "Please enter the name: ");
 	                            String name7 = scanner7.nextLine();
