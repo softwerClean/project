@@ -10,22 +10,22 @@ public class Admin
 	InputStream input888 = null;
 	protected boolean adminlogged;
 	protected String adminName;
-	protected String  admin_password;
-	 protected String Update;
+	protected String adminPassword;
+	protected String update;
 	 public Admin(String userName, String password) {
 			this.adminName = userName;
-			this.admin_password = password;
+			this.adminPassword = password;
 			this.adminlogged = false;
 		}
 
 		public Admin() {
 			this.adminName = "adham_12028277";
-			this.admin_password = "123456789@adham";
+			this.adminPassword = "123456789@adham";
 		}
 
 		public boolean login(String userName, String password) {
 			this.adminlogged = this.adminName.equals(userName);
-			this.adminlogged = this.admin_password.equals(password);
+			this.adminlogged = this.adminPassword.equals(password);
 			return this.adminlogged;
 		}
 
@@ -39,49 +39,6 @@ public class Admin
 		}
 
 		public String updatingUp(Admin admin) {
-			return this.Update;
+			return this.update;
 		}
 }
-//	 public Admin(String user_name, String password) 
-//	 {
-//		 this.admin_name=user_name;
-//		 this.admin_password=password;
-//		 
-//		 this.adminlogged=false;
-//	 }
-//	 public Admin() 
-//	 {
-//		 this.admin_name="adham_12028277";
-//		 this.admin_password="123456789@adham";				 
-//				 
-//	 }
-//
-//public boolean login(String user_name, String password)
-//{
-//	
-//	this.adminlogged=this.admin_name.equals(user_name);
-//	this.adminlogged=this.admin_password.equals(password);
-//
-//	return this.adminlogged;
-//
-//   }
-//
-//public boolean logout()
-//{
-//	
-//	this.adminlogged=false;
-//	return this.adminlogged;
-//	
-//   }
-//
-//public boolean isLogged()
-//{
-//	
-//	return this.adminlogged;
-//	
-//   }
-//public String updatingUp(Admin admin) 
-//{
-//	return this.Update;
-//}
-//  }

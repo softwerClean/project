@@ -106,7 +106,7 @@ public class FirstClass {
 	                logger.log(Level.INFO, "Enter the password:");
 	                String password = scanner.next();
 	                
-	                if (!admin.admin_password.equals(password) || !admin.adminName.equals(name)) {
+	                if (!admin.adminPassword.equals(password) || !admin.adminName.equals(name)) {
 	                    logger.log(Level.INFO, "The name or password is wrong");
 	                    break;
 	                }
