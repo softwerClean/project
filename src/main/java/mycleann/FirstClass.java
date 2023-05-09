@@ -230,8 +230,8 @@ public class FirstClass {
 	                            String address = scanner.next();
 	                            logger.log(Level.INFO, "Please enter the phone number:");
 	                            String phone = scanner.next();
-	                            customer.add(admin);
-	                            customer=new Customers(id, name9, email, address, phone);
+	                            customer.addd(admin);
+	                            customer.ret(id, name9, email, address, phone);
 	                            String filename2 = "customer.txt";
 	                            try {
 	                            	FileOutputStream fos = new FileOutputStream(filename2, true);

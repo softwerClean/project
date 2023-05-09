@@ -26,11 +26,11 @@ public class Company extends Product
 	}
 	public static void addUser(Admin ad,Customers cus)
 	{
-		if(ad.isLogged()&&!isUserRegestered(cus.getId())) {
+		if(ad.isLogged()&&!isUserRegestered(cus.id)) {
 			CUSTOMERS.add(cus);
 		}
 		else if(!ad.isLogged()) logger.log(Level.INFO,"we must the admin logged in ");
-		 else if(isUserRegestered(cus.getId())) logger.log(Level.INFO,"this user is already registered");
+		 else if(isUserRegestered(cus.id)) logger.log(Level.INFO,"this user is already registered");
 
 	}
 
@@ -39,7 +39,7 @@ public class Company extends Product
 
 		for (int i = 0 ; i<CUSTOMERS.size();i++)
 		{
-			if (CUSTOMERS.get(i).getId().equals(admin))
+			if (CUSTOMERS.get(i).id.equals(admin))
 				return true;
 		}
 		return false;
@@ -68,7 +68,7 @@ public class Company extends Product
 	    List<Customers> serch=new ArrayList<Customers>();
 	    for(int i = 0; i< CUSTOMERS.size(); i++)
 	    {
-	        if(CUSTOMERS.get(i).getId().contains(isbn)) serch.add(CUSTOMERS.get(i));
+	        if(CUSTOMERS.get(i).id.contains(isbn)) serch.add(CUSTOMERS.get(i));
 
 	    }
 	    return serch;
