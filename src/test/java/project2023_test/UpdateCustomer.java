@@ -59,7 +59,7 @@ public class UpdateCustomer {
 
 	@Then("error message and printed {string}")
 	public void error_message_and_printed(String string) {
-		assertEquals(false,customer.updateUp(admin));
+		assertEquals(false,customer.updateCustomer(admin));
 		logger.log(Level.INFO,"can not update up becouse  the admin is not login");
 	}
 

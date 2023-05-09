@@ -98,18 +98,16 @@ public class Customers
 		}
 		return  isUpdated ;
 	}
-	public boolean updateUp(Admin admin) 
-	{
-		isUpdated = false;
-		
-		if(admin.isLogged()) 
-		{
-			isUpdated = true;
 
-		}
-		return  isUpdated ;
+	public boolean updateCustomer(Admin admin) {
+	     isUpdated = false;
+	    if (admin.isLogged()) {
+	        isUpdated = true;
+	    } else {
+	        logger.log(Level.INFO, "Admin not logged in");
+	    }
+	    return isUpdated;
 	}
-
 	public boolean update() {
 		return this.isUpdated ;
 	}
@@ -138,14 +136,23 @@ public class Customers
 	    public boolean isEligibleForDiscount() {
 	        return eligibleForDiscount;
 	    }
-	    
 	    public boolean applyDiscount() {
 	        if (eligibleForDiscount) {
 	            double discountAmount = totalSpending * 0.1;
-	            logger.log(Level.INFO,name + " is eligible for a 10% discount of " + discountAmount + " NIS.");
+	            logger.log(Level.INFO, String.format("%s is eligible for a 10%% discount of %.2f NIS.", name, discountAmount));
 	        } else {
-	        	logger.log(Level.INFO,name + " is not eligible for the discount.");
+	            logger.log(Level.INFO, name + " is not eligible for the discount.");
 	        }
-			return applyDiscount();
+	        return applyDiscount();
 	    }
+
+//	    public boolean applyDiscount() {
+//	        if (eligibleForDiscount) {
+//	            double discountAmount = totalSpending * 0.1;
+//	            logger.log(Level.INFO,name + " is eligible for a 10% discount of " + discountAmount + " NIS.");
+//	        } else {
+//	        	logger.log(Level.INFO,name + " is not eligible for the discount.");
+//	        }
+//			return applyDiscount();
+//	    }
 }
