@@ -3,7 +3,6 @@ package mycleann;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Session;
-import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
@@ -20,7 +19,7 @@ public class EmailBuilder {
         return this;
     }
 
-    public EmailBuilder addTo(String to) throws AddressException, MessagingException {
+    public EmailBuilder addTo(String to) throws MessagingException {
         message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
         return this;
     }
