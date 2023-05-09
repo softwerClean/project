@@ -59,7 +59,7 @@ public class UpdateProduct
 	
 	@When("the product is Update up from the menu")
 	public void the_product_is_Update_up_from_the_menu() {
-	    admin.updatingUp(admin);
+	    admin.updatingUp();
 	}
 
 	@Then("print error message {string}")
