@@ -210,7 +210,7 @@ public class FirstClass {
 	                            File file = new File("customer.txt");
 	                            Scanner in = new Scanner(file);
 	                            String m;
-	                            String updatedCustomers = "";
+	                            StringBuilder updatedCustomers = new StringBuilder();
 	                            while (in.hasNextLine()) {
 	                                m = in.nextLine();
 	                                String[] fields = m.split(",");
@@ -226,16 +226,15 @@ public class FirstClass {
 	                                    logger.log(Level.INFO, "Please enter the new phone number:");
 	                                    String newPhone = scanner.next();
 	                                    String updatedCustomer = newId + "," + newName + "," + newEmail + "," + newAddress + "," + newPhone;
-	                                    updatedCustomers += updatedCustomer + "\n";
+	                                    updatedCustomers.append(updatedCustomer).append("\n");
 	                                } else {
-	                                    updatedCustomers += m + "\n";
+	                                    updatedCustomers.append(m).append("\n");
 	                                }
 	                            }
 	                            in.close();
 	                            try {
-	                            	FileWriter fileWriter = new FileWriter("customer.txt");
-	                            
-	                                fileWriter.write(updatedCustomers);
+	                                FileWriter fileWriter = new FileWriter("customer.txt");
+	                                fileWriter.write(updatedCustomers.toString());
 	                            } catch (IOException e) {
 	                                logger.log(Level.INFO, "Error writing to file: " + e.getMessage());
 	                            }
