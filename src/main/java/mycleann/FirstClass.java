@@ -223,11 +223,8 @@ public class FirstClass {
 	                                    String newAddress = scanner.next();
 	                                    logger.log(Level.INFO, "Please enter the new phone number:");
 	                                    String newPhone = scanner.next();
-	                                    StringBuilder sb = new StringBuilder();
-	                                    sb.append(newId).append(",").append(newName).append(",").append(newEmail).append(",").append(newAddress).append(",").append(newPhone).append("\n");
-	                                    updatedCustomers += sb.toString();
-	                                  //  String updatedCustomer = newId + "," + newName + "," + newEmail + "," + newAddress + "," + newPhone;
-	                                   // updatedCustomers += updatedCustomer + "\n";
+	                                    String updatedCustomer = newId + "," + newName + "," + newEmail + "," + newAddress + "," + newPhone;
+	                                    updatedCustomers += updatedCustomer + "\n";
 	                                } else {
 	                                    updatedCustomers += m + "\n";
 	                                }
