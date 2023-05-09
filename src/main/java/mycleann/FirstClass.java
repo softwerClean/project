@@ -129,12 +129,14 @@ public class FirstClass {
 	                                    String orderid1 = scanner.next();
 	                                    str = category1 + "," + NAME1 + "," + price1 + "," + amount1 + "," + orderid1;
 	                                    n += str + "\n";
-	                                    continue;
 	                                } else {
 	                                    n += string1 + "\n";
-	                                    continue;
 	                                }
+	                                continue;
 	                            }
+
+
+
 	                            in1.close();
 	                            FileWriter newFile = new FileWriter("product.txt");
 	                            newFile.write(n);
