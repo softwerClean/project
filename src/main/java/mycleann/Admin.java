@@ -38,7 +38,7 @@ public class Admin
 			return this.adminlogged;
 		}
 
-		public String updatingUp() {
+		public String updatingUp(Admin admin) {
 			return this.update;
 		}
 }
