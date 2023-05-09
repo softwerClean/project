@@ -76,7 +76,7 @@ public class UpdateCustomer {
 
 	@When("click Update of the customer")
 	public void click_update_of_the_customer() {
-		admin.updatingUp(admin);
+		admin.updatingUp();
 	}
 
 	@Then("Customer are update to the id is {string},the name is {string}")
