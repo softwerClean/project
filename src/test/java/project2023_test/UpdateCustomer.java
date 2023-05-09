@@ -39,7 +39,7 @@ public class UpdateCustomer {
 
 	@When("click update the informations")
 	public void click_update_the_informations() {
-		customer.UpdateMissing(admin);
+		customer.updateMissing(admin);
 	}
 
 	@Then("customer update to the id  {string},the name is {string},the price is {string},the amount is {string}")

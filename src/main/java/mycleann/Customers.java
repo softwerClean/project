@@ -86,19 +86,16 @@ public class Customers
 		return this.delete;
 	}
 
-		public boolean UpdateMissing(Admin admin) 
-	{
-			isUpdated = false;
-		
-		if(admin.isLogged()) 
+
+		public boolean updateMissing(Admin admin) 
 		{
-			
-			isUpdated = true;
-
+		    isUpdated = false;
+		    if (admin.isLogged()) 
+		    {
+		        isUpdated = true;
+		    }
+		    return isUpdated;
 		}
-		return  isUpdated ;
-	}
-
 	public boolean updateCustomer(Admin admin) {
 	     isUpdated = false;
 	    if (admin.isLogged()) {
@@ -146,13 +143,4 @@ public class Customers
 	        return applyDiscount();
 	    }
 
-//	    public boolean applyDiscount() {
-//	        if (eligibleForDiscount) {
-//	            double discountAmount = totalSpending * 0.1;
-//	            logger.log(Level.INFO,name + " is eligible for a 10% discount of " + discountAmount + " NIS.");
-//	        } else {
-//	        	logger.log(Level.INFO,name + " is not eligible for the discount.");
-//	        }
-//			return applyDiscount();
-//	    }
 }
