@@ -197,7 +197,8 @@ static String filenameproperities="customer.txt";
 	                                channel.write(buffer);
 	                                logger.log(Level.INFO, "Customer information has been written to the file.");
 	                            } catch (IOException e) {
-	                                logger.log(Level.INFO, "Error write to file: " + e.getMessage());
+	                            	String logMessage = String.format("Error writing to file: %s%n", e.getMessage());
+	                            	logger.log(Level.INFO, logMessage);
 	                            }
 	                            break;
 	                        case 8:
