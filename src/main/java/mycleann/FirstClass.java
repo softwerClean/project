@@ -382,7 +382,8 @@ static String filenameproperities="customer.txt";
 	                                logger.log(Level.INFO, json);
 	                            } catch (JsonProcessingException e) 
 	                            {
-	                            	logger.log(Level.SEVERE, "Error while processing JSON: " + e.getMessage());	                 
+	                            	String logMessage = String.format("Error while processing JSON: %s%n", e.getMessage());
+	                            	logger.log(Level.SEVERE, logMessage);
 
 	                            	}
 	                            break;
