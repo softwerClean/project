@@ -16,7 +16,7 @@ public class Worker {
     public Worker(String name) {
         this.name = name;
         this.available = true;
-        this.orders = new ArrayList();
+        this.orders = new ArrayList<Orderr>();
 
     }
 
