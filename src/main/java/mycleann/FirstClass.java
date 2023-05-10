@@ -120,14 +120,14 @@ static String filenameproperities="customer.txt";
 	                                logger.log(Level.INFO, "please enter the Category");
 	                                String category1 = scanner.next();
 	                                logger.log(Level.INFO, print);
-	                                String NAME1 = scanner.next();
+	                                String NAME = scanner.next();
 	                                logger.log(Level.INFO, "please enter the price");
 	                                String price1 = scanner.next();
 	                                logger.log(Level.INFO, "please enter the amount");
 	                                String amount1 = scanner.next();
 	                                logger.log(Level.INFO, "please enter the Order ID");
 	                                String orderid1 = scanner.next();
-	                                str = category1 + "," + NAME1 + "," + price1 + "," + amount1 + "," + orderid1;
+	                                str = category1 + "," + NAME + "," + price1 + "," + amount1 + "," + orderid1;
 	                                n.append(str).append("\n");
 	                            } else {
 	                                n.append(string1).append("\n");
