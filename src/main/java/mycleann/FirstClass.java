@@ -338,7 +338,10 @@ static String filenameproperities="customer.txt";
 	                                    currentLine7 = "";
 	                                }
 
-	                                currentLine7 += chunk7;
+	                                StringBuilder builder = new StringBuilder();
+	                                builder.append(currentLine7);
+	                                builder.append(chunk7);
+	                                currentLine7 = builder.toString();
 	                            }
 
 	                            if (!currentLine7.isEmpty()) {
