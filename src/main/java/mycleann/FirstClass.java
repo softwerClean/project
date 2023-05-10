@@ -289,7 +289,8 @@ static String filenameproperities="customer.txt";
 	                                    String NAME1 = parts[1];
 	                                    if (NAME1.equals(name12)) {
 	                                        fos.write((parts[0] + " " + parts[1] + " " + parts[2] + " " + parts[3] + " " + parts[4] + "\n").getBytes());
-	                                        logger.log(Level.INFO, parts[0] + " " + parts[1] + " " + parts[2] + " " + parts[3] + " " + parts[4] + "\n");
+	                                        String logMessage = String.format("%s %s %s %s %s%n", parts[0], parts[1], parts[2], parts[3], parts[4]);
+	                                        logger.log(Level.INFO, logMessage);
 	                                    }
 
 	                                    chunk = chunk.substring(index + 1);
