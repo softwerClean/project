@@ -145,7 +145,6 @@ static String filenameproperities="customer.txt";
 	                            logger.log(Level.INFO, print);
 	                            String name2 = scanner.next();
 	                            
-	                            int flag = 0;
 	                            try {
 	                                ArrayList<String> al = new ArrayList<String>();
 	                                RandomAccessFile raf = new RandomAccessFile("product.txt", "rw");
@@ -158,7 +157,6 @@ static String filenameproperities="customer.txt";
 	                                    String[] up = al.get(i).split(",");
 	                                    if (name2.equals(up[1])) {
 	                                        al.remove(i);
-	                                        flag = 1;
 	                                        break;
 	                                    }
 	                                }
