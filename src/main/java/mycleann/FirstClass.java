@@ -57,7 +57,7 @@ static String filenameproperities="customer.txt";
               channel.write(buffer);
               logger.log(Level.INFO, "Product information has been written to the file.");
           } catch (IOException e) {
-              logger.log(Level.INFO, "Error writing to the file: " + e.getMessage());
+        	  logger.log(Level.INFO, "Error writing to the file: %s", e.getMessage());
           }
           
 	}
