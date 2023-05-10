@@ -241,7 +241,6 @@ static String filenameproperities="customer.txt";
 	                        case 9:
 	                            logger.log(Level.INFO, "Please enter the name: ");
 	                            String name5 = scanner.next();
-	                            int flag1 = 0;
 	                            try {
 	                                ArrayList<String> al = new ArrayList<String>();
 	                                RandomAccessFile raf = new RandomAccessFile(filenameproperities, "rw");
@@ -254,7 +253,6 @@ static String filenameproperities="customer.txt";
 	                                    String[] up = al.get(i).split(",");
 	                                    if (name5.equals(up[1])) {
 	                                        al.remove(i);
-	                                        flag1 = 1;
 	                                        break;
 	                                    }
 	                                }
