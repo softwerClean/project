@@ -425,9 +425,10 @@ static String filenameproperities="customer.txt";
 	                            double discountedAmount = totalAmount - discount;
 
 	                            logger.log(Level.INFO, "Customer Name: {0}", customerName);
-	                            logger.log(Level.INFO, "Total Amount Spent: " + totalAmount + " NIS");
-	                            logger.log(Level.INFO, "Discount: " + discount + " NIS");
-	                            logger.log(Level.INFO, "Discounted Amount: " + discountedAmount + " NIS");
+	                            logger.log(Level.INFO, "Total Amount Spent: %d NIS%n", totalAmount);
+	                            logger.log(Level.INFO, "Discount: %d NIS%n", discount);
+	                            logger.log(Level.INFO, "Discounted Amount: %d NIS%n", discountedAmount);
+
 
    break;
                 default:
