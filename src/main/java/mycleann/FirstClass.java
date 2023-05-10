@@ -239,7 +239,7 @@ static String filenameproperities="customer.txt";
 	                            break;
 
 	                        case 9:
-	                            logger.log(Level.INFO, "Please enter the name: ");
+	                            logger.log(Level.INFO, "Please enter a name: ");
 	                            String name5 = scanner.next();
 	                            try {
 	                                ArrayList<String> al = new ArrayList<String>();
