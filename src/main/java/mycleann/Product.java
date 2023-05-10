@@ -8,9 +8,11 @@ public class Product
 {
 	static Logger logger = Logger.getLogger(FirstClass.class.getName());
 
-	protected String Category,price,amount;
+	protected String Category;
+	protected String price;
+	protected String amount;
 	protected String name;
-	protected static ArrayList <String[]> products =new ArrayList();
+	protected static ArrayList <String[]> products =new ArrayList<String[]>();
 	protected boolean add;
 	protected boolean delete;
 	protected boolean found;
@@ -18,7 +20,7 @@ public class Product
 	protected int var;
 	protected int width,hight;
 	private String Orderid;
-	protected static ArrayList <Product> find_by_name =new ArrayList();
+	protected static ArrayList <Product> find_by_name =new ArrayList<Product>();
 
 	
 	public String getOrderid() {
