@@ -331,7 +331,8 @@ static String filenameproperities="customer.txt";
 	                                    String nameInFile7 = parts7[1];
 	                                    if (nameInFile7.equals(name7)) {
 	                                        fos7.write((parts7[0] + " " + parts7[1] + " " + parts7[2] + " " + parts7[3] + " " + parts7[4] + "\n").getBytes());
-	                                        logger.log(Level.INFO, String.format("%s %s %s %s %s %s%n", parts7[0], "%s", parts7[1], "%s", parts7[2], "%s", parts7[3], "%s", parts7[4], "%s"), "");
+	                                        String logMessage = String.format("%s %s %s %s %s %s%n", parts7[0], "%s", parts7[1], "%s", parts7[2], "%s", parts7[3], "%s", parts7[4], "%s");
+	                                        logger.log(Level.INFO, logMessage);
 	                                    }
 
 	                                    chunk7 = chunk7.substring(index7 + 1);
