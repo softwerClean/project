@@ -421,7 +421,7 @@ static String filenameproperities="customer.txt";
 	                            logger.log(Level.INFO, "Discount: " + discount + " NIS");
 	                            logger.log(Level.INFO, "Discounted Amount: " + discountedAmount + " NIS");
 
-   
+   break;
                 default:
                     logger.log(Level.INFO, "Invalid input. Please try again.");
                     break;
