@@ -232,7 +232,8 @@ static String filenameproperities="customer.txt";
 	                                FileWriter fileWriter = new FileWriter(filenameproperities);
 	                                fileWriter.write(updatedCustomers.toString());
 	                            } catch (IOException e) {
-	                                logger.log(Level.INFO, "Error writing to file: " + e.getMessage());
+	                            	String logMessage = String.format("Error writing to file: %s%n", e.getMessage());
+	                            	logger.log(Level.INFO, logMessage);
 	                            }
 	                            break;
 
