@@ -133,15 +133,16 @@ public class Customers
 	    public boolean isEligibleForDiscount() {
 	        return eligibleForDiscount;
 	    }
-	    public void applyDiscount() throws Exception {
+	    public boolean applyDiscount() {
 	        if (eligibleForDiscount) {
 	            double discountAmount = totalSpending * 0.1;
 	            logger.log(Level.INFO, String.format("%s is eligible for a 10%% discount of %.2f NIS.", name, discountAmount));
+	            return true;
 	        } else {
-	            throw new Exception(name + " is not eligible for the discount.");
+	            logger.log(Level.INFO, String.format("%s is not eligible for the discount.", name));
+	            return false;
 	        }
 	    }
-
 	    
 	    
 
