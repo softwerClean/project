@@ -74,7 +74,7 @@ static String filenameproperities2="product.txt";
 	        logger.log(Level.INFO, "Welcome to our library. Who are you?\n1-Admin.\n2-User.\n3-Exit the Company.");
 
 	        Properties properties = new Properties();
-	        FileInputStream inputStream = new FileInputStream("C:\\Users\\Hp\\Desktop\\New folder (8)\\mycleanadhamfgdfg\\src\\test\\resources\\config.properties");
+	        FileInputStream inputStream = new FileInputStream("C:\\Users\\Hp\\Desktop\\mycleanadhamfgdfg\\src\\test\\resources\\config.properties");
 	        properties.load(inputStream);
 	        
 	        key = scanner.nextInt();
