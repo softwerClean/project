@@ -31,7 +31,7 @@ public class UpdateProduct
 
 	@Given("the product name is {string},the Category is {string},the price is {string},the amount is {string},the orderID is {string}")
 	public void the_product_name_is_the_category_is_the_price_is_the_amount_is_the_orderID_is(String string, String string2, String string3, String string4,String string5) {
-		product.Product("Category", "name", "price", "12", "101520");
+		product.product("Category", "name", "price", "12", "101520");
 	}
 
 	@When("the product is Update missing from the menu")

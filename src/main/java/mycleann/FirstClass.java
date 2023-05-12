@@ -47,7 +47,7 @@ static String filenameproperities2="product.txt";
           
           product.add(admin);
           Company company = new Company();
-          company.PutProduct(category, name8, price, amount, orderid);
+          company.putProduct(category, name8, price, amount, orderid);
           
           String filename = filenameproperities2;
           

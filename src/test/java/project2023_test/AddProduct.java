@@ -31,7 +31,7 @@ public void the_admin_is_log() {
 
 @Given("i wont to add the product")
 public void i_wont_to_add_the_product() {
-	product.PutProduct("rug","Cotton","100","3","101520");
+	product.putProduct("rug","Cotton","100","3","101520");
     
 }
 

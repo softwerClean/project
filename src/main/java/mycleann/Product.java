@@ -74,7 +74,7 @@ public class Product
 	  public  String getTitle() {
 	        return name;
 	    }
-	public void Product(String category, String name, String price, String amount,String orderid)
+	public void product(String category, String name, String price, String amount,String orderid)
 	{
 		this.ctegory=category;
 		this.name=name;
@@ -104,7 +104,7 @@ public class Product
 		return this.add;
 	}
 
-	public void PutProduct(String string, String string2, String string3, String string4,String string5) {
+	public void putProduct(String string, String string2, String string3, String string4,String string5) {
 		
 	}
 
