@@ -4,7 +4,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Order {
-	static Logger logger = Logger.getLogger(FirstClass.class.getName());
+	static Logger logger = Logger.getLogger(Order.class.getName());
 
     private String status;
     private String customerEmail;
