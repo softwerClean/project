@@ -156,7 +156,7 @@ public class Product
 		return this.update;
 	}
 
-	public static List<Product> searchByName(String string)
+	public static List<Product> searchByName()
 	{
 		List<Product> name =new ArrayList<Product>();
 for(int i=0;i<findbyname.size();i++)

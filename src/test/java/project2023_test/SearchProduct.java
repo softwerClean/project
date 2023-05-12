@@ -51,13 +51,13 @@ admin.login("abood","12345@abood");
 	@When("the user search for txt {string}")
 	public void the_user_search_for_txt(String string) 
 	{
-	  name = Product.searchByName(string);
+	  name = Product.searchByName();
 	}
 
 	@Then("the product with name {string} is found")
 	public void the_product_with_name_is_found(String string) 
 	{
-		name = Product.searchByName(string);
+		name = Product.searchByName();
 		if(name.isEmpty())
 		{
 			   log.log(Level.INFO,"Product is empty");
@@ -78,7 +78,7 @@ admin.logout();
 	@Then("no product found")
 	public void no_product_found()
 	{
-		name = Product.searchByName("");
+		name = Product.searchByName();
 		if(name.isEmpty())
 		{
 			   log.log(Level.INFO,"Product is empty");
