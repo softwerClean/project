@@ -157,7 +157,7 @@ public class Product
 
 	public static List<Product> SearchByName(String string)
 	{
-		List<Product> name =new ArrayList();
+		List<Product> name =new ArrayList<Product>();
 for(int i=0;i<find_by_name.size();i++)
 {
 	  if(find_by_name.get(i).equals(name)){
