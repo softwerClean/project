@@ -29,7 +29,8 @@ public class FirstClass {
     static String print = "Please enter the name:";
     static Admin admin = new Admin();
 static String filenameproperities="customer.txt";
-	
+static String filenameproperities2="product.txt";
+
 	public static void adminMenue()
 	{
           Product product = new Product();
@@ -48,7 +49,7 @@ static String filenameproperities="customer.txt";
           Company company = new Company();
           company.PutProduct(category, name8, price, amount, orderid);
           
-          String filename = "product.txt";
+          String filename = filenameproperities2;
           
           try {
           		FileOutputStream fos = new FileOutputStream(filename, true); 
@@ -108,7 +109,7 @@ static String filenameproperities="customer.txt";
 	                        logger.log(Level.INFO, print);
 	                        String name1 = scanner.next();
 
-	                        File file1 = new File("product.txt");
+	                        File file1 = new File(filenameproperities2);
 	                        Scanner in1 = new Scanner(file1);
 
 	                        String string1;
@@ -136,7 +137,7 @@ static String filenameproperities="customer.txt";
 	                        }
 
 	                        in1.close();
-	                        FileWriter newFile = new FileWriter("product.txt");
+	                        FileWriter newFile = new FileWriter(filenameproperities2);
 	                        newFile.write(n.toString());
 	                        newFile.close();
 	                        break;
@@ -148,7 +149,7 @@ static String filenameproperities="customer.txt";
 	                            
 	                            try {
 	                                ArrayList<String> al = new ArrayList<String>();
-	                                RandomAccessFile raf = new RandomAccessFile("product.txt", "rw");
+	                                RandomAccessFile raf = new RandomAccessFile(filenameproperities2, "rw");
 	                                raf.seek(0);
 	                                String s;
 	                                while ((s = raf.readLine()) != null) {
@@ -161,7 +162,7 @@ static String filenameproperities="customer.txt";
 	                                        break;
 	                                    }
 	                                }
-	                                BufferedWriter writer = new BufferedWriter(new FileWriter("product.txt"));
+	                                BufferedWriter writer = new BufferedWriter(new FileWriter(filenameproperities2));
 	                                writer.write("");
 	                                writer.flush();
 	                                writer.close();
@@ -188,12 +189,12 @@ static String filenameproperities="customer.txt";
 	                            String phone = scanner.next();
 	                            customer.addd(admin);
 	                            customer.ret(id, name9, email, address, phone);
-	                            String filename2 = "customer.txt";
+	                            String filename2 = filenameproperities;
 	                            try {
 	                            	FileOutputStream fos = new FileOutputStream(filename2, true);
 	                            
 	                                 FileChannel channel = fos.getChannel();
-	                                String customerInfo = id + "," + name + "," + email + "," + address + "," + phone + "\n";
+	                                String customerInfo = id + "," + name9 + "," + email + "," + address + "," + phone + "\n";
 	                                ByteBuffer buffer = ByteBuffer.wrap(customerInfo.getBytes());
 	                                channel.write(buffer);
 	                                logger.log(Level.INFO, "Customer information has been written to the file.");
@@ -272,15 +273,16 @@ static String filenameproperities="customer.txt";
 	                            break;
 
 	                        case 6:
-	                            String filename22 = "product.txt";
+	                            String filename22 = filenameproperities2;
+	                            Scanner scannerr = new Scanner(System.in);
 	                            logger.log(Level.INFO, "Please enter the name: ");
-	                            String name12 = scanner.nextLine();
+	                            String name_product = scannerr.nextLine();
 	                            FileInputStream fis = new FileInputStream(filename22);
 	                            FileOutputStream fos = new FileOutputStream("output.txt");
 	                            byte[] buffer = new byte[1024];
 	                            int bytesRead;
 	                            String currentLine = "";
-
+                             //   String result="";
 	                            while ((bytesRead = fis.read(buffer)) != -1) {
 
 	                                String chunk = new String(buffer, 0, bytesRead);
@@ -289,8 +291,8 @@ static String filenameproperities="customer.txt";
 	                                    String line = currentLine + chunk.substring(0, index);
 
 	                                    String[] parts = line.split(",");
-	                                    String NAME1 = parts[1];
-	                                    if (NAME1.equals(name12)) {
+	                                    String NAmE = parts[1];
+	                                    if (NAmE.equals(name_product)) {
 	                                        fos.write((parts[0] + " " + parts[1] + " " + parts[2] + " " + parts[3] + " " + parts[4] + "\n").getBytes());
 	                                        String logMessage = String.format("%s %s %s %s %s%n", parts[0], parts[1], parts[2], parts[3], parts[4]);
 	                                        logger.log(Level.INFO, logMessage);
@@ -301,10 +303,12 @@ static String filenameproperities="customer.txt";
 	                                }
 
 	                                currentLine += chunk;
+	                               
+
 	                            }
 
 	                            if (!currentLine.isEmpty()) {
-	                                fos.write(("Product not found.\n").getBytes());
+	                                fos.write("Product not found.\n".getBytes());
 	                            }
 	                            break;
 
@@ -335,7 +339,7 @@ static String filenameproperities="customer.txt";
 	                                    String nameInFile7 = parts7[1];
 	                                    if (nameInFile7.equals(name7)) {
 	                                        fos7.write((parts7[0] + " " + parts7[1] + " " + parts7[2] + " " + parts7[3] + " " + parts7[4] + "\n").getBytes());
-	                                        String logMessage = String.format("%s %s %s %s %s %s%n", parts7[0], "%s", parts7[1], "%s", parts7[2], "%s", parts7[3], "%s", parts7[4], "%s");
+	                                        String logMessage = String.format("%s %s %s %s %s %n", parts7[0], parts7[1], parts7[2],  parts7[3], parts7[4]);
 	                                        logger.log(Level.INFO, logMessage);
 	                                    }
 
