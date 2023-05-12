@@ -2,6 +2,7 @@ package mycleann;
 
 import java.io.InputStream;
 import java.util.Properties;
+import java.util.Scanner;
 
 public class Admin
 {
@@ -12,6 +13,7 @@ public class Admin
 	protected String adminName;
 	protected String adminPassword;
 	protected String update;
+	private Scanner scanner;
 	 public Admin(String userName, String password) {
 			this.adminName = userName;
 			this.adminPassword = password;
@@ -20,8 +22,13 @@ public class Admin
 
 		public Admin() {
 			this.adminName = "adham_12028277";
-			this.adminPassword = "123456789@adham";
+	        this.adminPassword = enterPassword();
 		}
+		private String enterPassword() {
+	        scanner = new Scanner(System.in);
+	        System.out.println("Enter the admin password:");
+	        return scanner.nextLine();
+	    }
 
 		public boolean login(String userName, String password) {
 			this.adminlogged = this.adminName.equals(userName);
