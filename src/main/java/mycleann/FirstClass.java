@@ -459,7 +459,6 @@ static String filenameproperities2="product.txt";
 				
 				logger.log(Level.INFO,"1-Are you a new customer");
 				logger.log(Level.INFO,"2-Are you a customer Have an account?");
-				 String name7 = scanner.next();
 
 				
 				
