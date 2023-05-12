@@ -452,7 +452,9 @@ static String filenameproperities2="product.txt";
 
 	 				
 
-	 	        }
+	                    break;
+  }break;
+
 		case 2 :
 				
 				logger.log(Level.INFO,"1-Are you a new customer");
@@ -471,7 +473,6 @@ static String filenameproperities2="product.txt";
             logger.log(Level.INFO, "Invalid input. Please try again.");
             break;
     
-
 
 
 
