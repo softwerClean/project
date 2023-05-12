@@ -27,6 +27,7 @@ public class OrderCompleteEmail {
         props.put("mail.smtp.port", SMTP_PORT);
 
         Session session = Session.getInstance(props, new javax.mail.Authenticator() {
+        	@Override
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(SMTP_USERNAME, SMTP_PASSWORD);
             }
