@@ -59,8 +59,8 @@ static String filenameproperities2="product.txt";
               channel.write(buffer);
               logger.log(Level.INFO, "Product information has been written to the file.");
           } catch (IOException e) {
-        	  logger.log(Level.INFO, "Error writing to the file: %s", e.getMessage());
-          }
+        	  logger.info("Error writing to the file: " + e.getMessage());
+        	  }
           
 	}
 	
