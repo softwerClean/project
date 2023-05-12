@@ -276,7 +276,7 @@ static String filenameproperities2="product.txt";
 	                            String filename22 = filenameproperities2;
 	                            Scanner scannerr = new Scanner(System.in);
 	                            logger.log(Level.INFO, "Please enter the name: ");
-	                            String name_product = scannerr.nextLine();
+	                            String nameproduct = scannerr.nextLine();
 	                            FileInputStream fis = new FileInputStream(filename22);
 	                            FileOutputStream fos = new FileOutputStream("output.txt");
 	                            byte[] buffer = new byte[1024];
@@ -291,7 +291,7 @@ static String filenameproperities2="product.txt";
 
 	                                    String[] parts = line.split(",");
 	                                    String NAmE = parts[1];
-	                                    if (NAmE.equals(name_product)) {
+	                                    if (NAmE.equals(nameproduct)) {
 	                                        fos.write((parts[0] + " " + parts[1] + " " + parts[2] + " " + parts[3] + " " + parts[4] + "\n").getBytes());
 	                                        String logMessage = String.format("%s %s %s %s %s%n", parts[0], parts[1], parts[2], parts[3], parts[4]);
 	                                        logger.log(Level.INFO, logMessage);
