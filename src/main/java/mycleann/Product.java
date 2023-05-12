@@ -8,7 +8,7 @@ public class Product
 {
 	static Logger logger = Logger.getLogger(Product.class.getName());
 
-	protected String Category;
+	protected String category;
 	protected String price;
 	protected String amount;
 	protected String name;
@@ -31,11 +31,11 @@ public class Product
 		Orderid = orderid;
 	}
 	public String getCategory() {
-		return Category;
+		return category;
 	}
 
 	public void setCategory(String category) {
-		Category = category;
+		category = category;
 	}	
 	public String getPrice() {
 		return price;
@@ -73,9 +73,9 @@ public class Product
 	  public  String getTitle() {
 	        return name;
 	    }
-	public void Product(String Category, String name, String price, String amount,String orderid)
+	public void Product(String category, String name, String price, String amount,String orderid)
 	{
-		this.Category=Category;
+		this.category=category;
 		this.name=name;
 		this.price=price;
 		this.amount=amount;
@@ -87,7 +87,7 @@ public class Product
 		add = false;
 	if(admin.isLogged())
 	{
-		String [] product2 = {this.Category,this.name,this.price,this.amount,this.Orderid};
+		String [] product2 = {this.category,this.name,this.price,this.amount,this.Orderid};
 		if(Product.products.add(product2))
 			add=true;
 	}
