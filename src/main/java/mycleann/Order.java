@@ -23,7 +23,7 @@ public class Order {
         try {
             emailSender.sendEmail(customerEmail, orderDetails);
         } catch (Exception e) {
-        	logger.log(Level.INFO,"Failed to send email notification: " + e.getMessage());
+        	logger.log(Level.INFO, "Failed to send email notification: %s", e.getMessage());
         }
     }
 
