@@ -67,7 +67,9 @@ static String filenameproperities2="product.txt";
 	
 	
 	
-	public static void function() throws IOException {
+	public static void function() throws IOException 
+	{
+		
 	    int key;
 
 	    while (true) {
