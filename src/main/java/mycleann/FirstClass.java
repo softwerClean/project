@@ -301,8 +301,9 @@ static String filenameproperities2="product.txt";
 	                                    currentLine = "";
 	                                }
 
-	                                currentLine += chunk;
-	                               
+	                                StringBuilder builder = new StringBuilder(currentLine);
+	                                builder.append(chunk);
+	                                currentLine = builder.toString();	                               
 
 	                            }
 
