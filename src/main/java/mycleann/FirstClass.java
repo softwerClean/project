@@ -49,6 +49,7 @@ static String filenameproperities="customer.txt";
           company.PutProduct(category, name8, price, amount, orderid);
           
           String filename = "product.txt";
+          
           try {
           		FileOutputStream fos = new FileOutputStream(filename, true); 
           		FileChannel channel = fos.getChannel() ;
