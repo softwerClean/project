@@ -2,6 +2,8 @@ package mycleann;
 
 
 import java.util.Properties;
+import java.util.Scanner;
+
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
@@ -16,8 +18,14 @@ public class OrderCompleteEmail {
     private static final String SMTP_HOST = "smtp.gmail.com";
     private static final int SMTP_PORT = 587;
     private static final String SMTP_USERNAME = "adham yaqoub";
-    private static final String SMTP_PASSWORD = "0594348312Amamry";
+    private static final String SMTP_PASSWORD = enterPassword();
+	private static Scanner scanner;
 
+    private static String enterPassword() {
+        scanner = new Scanner(System.in);
+        System.out.println("Enter the admin password:");
+        return scanner.nextLine();
+    }
     public static void sendEmail(String customerEmail, String orderId) throws MessagingException {
 
         Properties props = new Properties();
