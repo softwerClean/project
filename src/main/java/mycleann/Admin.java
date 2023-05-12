@@ -3,6 +3,8 @@ package mycleann;
 import java.io.InputStream;
 import java.util.Properties;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Admin
 {
@@ -14,6 +16,8 @@ public class Admin
 	protected String adminPassword;
 	protected String update;
 	private Scanner scanner;
+	static Logger logger = Logger.getLogger(Admin.class.getName());
+
 	 public Admin(String userName, String password) {
 			this.adminName = userName;
 			this.adminPassword = password;
@@ -26,7 +30,8 @@ public class Admin
 		}
 		private String enterPassword() {
 	        scanner = new Scanner(System.in);
-	        System.out.println("Enter the admin password:");
+
+			logger.log(Level.INFO,"Enter the admin password:");
 	        return scanner.nextLine();
 	    }
 

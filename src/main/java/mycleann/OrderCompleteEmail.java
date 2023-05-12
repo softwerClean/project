@@ -11,8 +11,10 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-
+import java.util.logging.Logger;
+import java.util.logging.Level;
 public class OrderCompleteEmail {
+	static Logger logger = Logger.getLogger(OrderCompleteEmail.class.getName());
 
     private static final String EMAIL_FROM = "amamry2021.2002@gmail.com";
     private static final String SMTP_HOST = "smtp.gmail.com";
@@ -23,7 +25,7 @@ public class OrderCompleteEmail {
 
     private static String enterPassword() {
         scanner = new Scanner(System.in);
-        System.out.println("Enter the email password:");
+		logger.log(Level.INFO,"Enter the Email password:");
         return scanner.nextLine();
     }
     public static void sendEmail(String customerEmail, String orderId) throws MessagingException {

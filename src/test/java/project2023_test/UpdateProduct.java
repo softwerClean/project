@@ -8,12 +8,11 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import mycleann.Admin;
-import mycleann.FirstClass;
 import mycleann.Product;
 
 public class UpdateProduct
 {
-	static Logger logger = Logger.getLogger(FirstClass.class.getName());
+	static Logger logger = Logger.getLogger(UpdateProduct.class.getName());
 
 	Admin admin;
 	Product product;
