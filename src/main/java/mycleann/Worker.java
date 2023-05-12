@@ -40,9 +40,8 @@ public class Worker {
     
     public void assignOrders(List<Orderr> orders) {
         this.orders = orders;
-        if (orders.size() > 0) {
-            logger.log(Level.INFO, String.format("%s has been assigned %d orders:", name, orders.size()));
-        }        for (Orderr order : orders) {
+        logger.log(Level.INFO, String.format("%s has been assigned %d orders:", name, orders.size()));
+        for (Orderr order : orders) {
         	logger.log(Level.INFO, String.format("- %s", order.getName()));
         }
       }
