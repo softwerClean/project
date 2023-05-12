@@ -125,7 +125,7 @@ public class Product
 		return this.delete;
 	}
 
-	public boolean UpdateMissing(Admin admin) 
+	public boolean updateMissing(Admin admin) 
 	{
 		myVar = Integer.parseInt(amount);
 		update= false;
@@ -156,7 +156,7 @@ public class Product
 		return this.update;
 	}
 
-	public static List<Product> SearchByName(String string)
+	public static List<Product> searchByName(String string)
 	{
 		List<Product> name =new ArrayList<Product>();
 for(int i=0;i<findbyname.size();i++)

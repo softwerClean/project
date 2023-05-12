@@ -36,7 +36,7 @@ public class UpdateProduct
 
 	@When("the product is Update missing from the menu")
 	public void the_product_is_Update_missing_from_the_menu() {
-		product.UpdateMissing(admin);
+		product.updateMissing(admin);
 
 	}
 
@@ -52,7 +52,7 @@ public class UpdateProduct
 	@Then("error message was printed {string}")
 	public void error_message_was_printed(String string) {
 	    admin.logout();
-		assertEquals(false,product.UpdateMissing(admin));
+		assertEquals(false,product.updateMissing(admin));
 		logger.log(Level.INFO,"can not update missing becouse the admin is not login");
 	}
 	
