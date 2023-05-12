@@ -290,8 +290,8 @@ static String filenameproperities2="product.txt";
 	                                    String line = currentLine + chunk.substring(0, index);
 
 	                                    String[] parts = line.split(",");
-	                                    String NAmE = parts[1];
-	                                    if (NAmE.equals(nameproduct)) {
+	                                    String name26 = parts[1];
+	                                    if (name26.equals(nameproduct)) {
 	                                        fos.write((parts[0] + " " + parts[1] + " " + parts[2] + " " + parts[3] + " " + parts[4] + "\n").getBytes());
 	                                        String logMessage = String.format("%s %s %s %s %s%n", parts[0], parts[1], parts[2], parts[3], parts[4]);
 	                                        logger.log(Level.INFO, logMessage);
