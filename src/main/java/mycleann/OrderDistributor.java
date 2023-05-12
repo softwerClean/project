@@ -39,7 +39,7 @@ public class OrderDistributor {
         numWorkerOrders++; 
       }
       
-      List<Orderr> workerOrders = new ArrayList();
+      List<Orderr> workerOrders = new ArrayList<Orderr>();
       for (int j = 0; j < numWorkerOrders; j++) {
         if (currentOrderIndex >= numOrders) {
           break; 
