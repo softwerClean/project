@@ -23,7 +23,7 @@ public class OrderCompleteEmail {
 
     private static String enterPassword() {
         scanner = new Scanner(System.in);
-        System.out.println("Enter the admin password:");
+        System.out.println("Enter the email password:");
         return scanner.nextLine();
     }
     public static void sendEmail(String customerEmail, String orderId) throws MessagingException {
