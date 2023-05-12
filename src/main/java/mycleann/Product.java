@@ -8,7 +8,7 @@ public class Product
 {
 	static Logger logger = Logger.getLogger(Product.class.getName());
 
-	protected String category;
+	protected String ctegory;
 	protected String price;
 	protected String amount;
 	protected String name;
@@ -17,7 +17,7 @@ public class Product
 	protected boolean delete;
 	protected boolean found;
 	protected boolean update;
-	protected int var;
+	protected int myVar;
 	protected int width,hight;
 	private String Orderid;
 	protected static ArrayList <Product> find_by_name =new ArrayList<Product>();
@@ -31,11 +31,11 @@ public class Product
 		Orderid = orderid;
 	}
 	public String getCategory() {
-		return category;
+		return ctegory;
 	}
 
 	public void setCategory(String category) {
-		category = category;
+		ctegory = category;
 	}	
 	public String getPrice() {
 		return price;
@@ -75,7 +75,7 @@ public class Product
 	    }
 	public void Product(String category, String name, String price, String amount,String orderid)
 	{
-		this.category=category;
+		this.ctegory=category;
 		this.name=name;
 		this.price=price;
 		this.amount=amount;
@@ -87,7 +87,7 @@ public class Product
 		add = false;
 	if(admin.isLogged())
 	{
-		String [] product2 = {this.category,this.name,this.price,this.amount,this.Orderid};
+		String [] product2 = {this.ctegory,this.name,this.price,this.amount,this.Orderid};
 		if(Product.products.add(product2))
 			add=true;
 	}
@@ -126,12 +126,12 @@ public class Product
 
 	public boolean UpdateMissing(Admin admin) 
 	{
-		var = Integer.parseInt(amount);
+		myVar = Integer.parseInt(amount);
 		update= false;
 		
-		if(admin.isLogged()&&var>=1) 
+		if(admin.isLogged()&&myVar>=1) 
 		{
-			var-=1;
+			myVar-=1;
 			update= true;
 
 		}
@@ -139,12 +139,12 @@ public class Product
 	}
 	public boolean updateUp(Admin admin) 
 	{
-		var = Integer.parseInt(amount);
+		myVar = Integer.parseInt(amount);
 		update= false;
 		
 		if(admin.isLogged()) 
 		{
-			var+=1;
+			myVar+=1;
 			update= true;
 
 		}
