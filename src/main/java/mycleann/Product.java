@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 import java.util.logging.Level;
 public class Product 
 {
-	static Logger logger = Logger.getLogger(FirstClass.class.getName());
+	static Logger logger = Logger.getLogger(Product.class.getName());
 
 	protected String Category;
 	protected String price;
