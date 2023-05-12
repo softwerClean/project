@@ -282,7 +282,6 @@ static String filenameproperities2="product.txt";
 	                            byte[] buffer = new byte[1024];
 	                            int bytesRead;
 	                            String currentLine = "";
-                             //   String result="";
 	                            while ((bytesRead = fis.read(buffer)) != -1) {
 
 	                                String chunk = new String(buffer, 0, bytesRead);
