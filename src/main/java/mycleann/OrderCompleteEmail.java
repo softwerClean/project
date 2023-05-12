@@ -40,4 +40,6 @@ public class OrderCompleteEmail {
 
         Transport.send(message);
     }
+    private OrderCompleteEmail() {
+    }
 }
