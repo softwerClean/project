@@ -74,7 +74,7 @@ public class Product
 	  public  String getTitle() {
 	        return name;
 	    }
-	public void product(String category, String name, String price, String amount,String orderid)
+	public void processProduct(String category, String name, String price, String amount,String orderid)
 	{
 		this.ctegory=category;
 		this.name=name;

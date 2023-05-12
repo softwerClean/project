@@ -33,7 +33,7 @@ public void the_admin_is_logged_in() {
 
 @Given("the name is {string},the Category is {string},the price is {string},the amount is {string},the orderID is {string}")
 public void the_name_is_the_category_is_the_price_is_the_amount_is_the_orderID_is(String string, String string2, String string3, String string4,String string5) {
-	product.product("Category", "name", "price", "12", "101520");
+	product.processProduct("Category", "name", "price", "12", "101520");
     
 }
 
