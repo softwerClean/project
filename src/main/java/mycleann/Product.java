@@ -18,17 +18,18 @@ public class Product
 	protected boolean found;
 	protected boolean update;
 	protected int myVar;
-	protected int width,hight;
-	private String Orderid;
-	protected static ArrayList <Product> find_by_name =new ArrayList<Product>();
+	protected int width;
+	protected int hight;
+	private String orderId;
+	protected static ArrayList <Product> findbyname =new ArrayList<Product>();
 
 	
 	public String getOrderid() {
-		return Orderid;
+		return orderId;
 	}
 	
 	public void setOrderid(String orderid) {
-		Orderid = orderid;
+		orderId = orderid;
 	}
 	public String getCategory() {
 		return ctegory;
@@ -79,7 +80,7 @@ public class Product
 		this.name=name;
 		this.price=price;
 		this.amount=amount;
-		this.Orderid=orderid;
+		this.orderId=orderid;
 	}
 	
 	public boolean add(Admin admin)
@@ -87,7 +88,7 @@ public class Product
 		add = false;
 	if(admin.isLogged())
 	{
-		String [] product2 = {this.ctegory,this.name,this.price,this.amount,this.Orderid};
+		String [] product2 = {this.ctegory,this.name,this.price,this.amount,this.orderId};
 		if(Product.products.add(product2))
 			add=true;
 	}
@@ -158,10 +159,10 @@ public class Product
 	public static List<Product> SearchByName(String string)
 	{
 		List<Product> name =new ArrayList<Product>();
-for(int i=0;i<find_by_name.size();i++)
+for(int i=0;i<findbyname.size();i++)
 {
-	  if(find_by_name.get(i).equals(name)){
-		  name.add(find_by_name.get(i));
+	  if(findbyname.get(i).equals(name)){
+		  name.add(findbyname.get(i));
       }
 }
 		
