@@ -30,6 +30,5 @@ public class OrderCompleteEmailSteps {
 
     @Then("the customer should receive an email with the order ID")
     public void the_customer_should_receive_an_email_with_the_order_ID() {
-        //assertEquals(true, true);
     }
 }
