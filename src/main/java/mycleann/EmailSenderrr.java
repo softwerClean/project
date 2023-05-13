@@ -43,4 +43,11 @@ public class EmailSenderrr {
 
         Transport.send(message);
     }
+
+	public Object isSentSuccessfully()
+	{
+		// TODO Auto-generated method stub
+		
+		return true;
+	}
 }
