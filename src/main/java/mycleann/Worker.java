@@ -39,10 +39,15 @@ public class Worker {
     }
     
     public void assignOrders(List<Orderr> orders) {
+        if (orders == null) {
+            logger.log(Level.SEVERE, "Cannot assign null list of orders.");
+            return;
+        }
         this.orders = orders;
         logger.log(Level.INFO, String.format("%s has been assigned %d orders:", name, orders.size()));
         for (Orderr order : orders) {
-        	logger.log(Level.INFO, String.format("- %s", order.getName()));
+            logger.log(Level.INFO, String.format("- %s", order.getName()));
         }
-      }
+    }
+
 }
