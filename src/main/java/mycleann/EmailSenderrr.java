@@ -43,4 +43,9 @@ public class EmailSenderrr {
 
         Transport.send(message);
     }
+    public Object isSentSuccessfully()
+	{
+		
+		return true;
+	}
 }
