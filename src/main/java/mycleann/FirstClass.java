@@ -154,7 +154,8 @@ static String filenameproperities2="product.txt";
 	                                RandomAccessFile raf = new RandomAccessFile(filenameproperities2, "rw");
 	                                raf.seek(0);
 	                                String s;
-	                                while ((s = raf.readLine()) != null) {
+	                                while ((s = raf.readLine()) != null)
+	                                {
 	                                    al.add(s);
 	                                }
 	                                for (int i = 0; i < al.size(); i++)
