@@ -12,6 +12,9 @@ public class EmailSenderTest {
     public void testSendEmail() throws AddressException, MessagingException {
         EmailSenderrr emailSender = new EmailSenderrr("smtp.gmail.com", "587", "adham yaqoub", "0594348312Amamry");
         emailSender.sendEmail("amamry2021.2002@gmail.com", "hello");
+
+        // Check that the email was sent successfully
+        assertEquals("Email should have been sent successfully", emailSender.isSentSuccessfully());
     }
 }
 
