@@ -157,7 +157,8 @@ static String filenameproperities2="product.txt";
 	                                while ((s = raf.readLine()) != null) {
 	                                    al.add(s);
 	                                }
-	                                for (int i = 0; i < al.size(); i++) {
+	                                for (int i = 0; i < al.size(); i++)
+	                                {
 	                                    String[] up = al.get(i).split(",");
 	                                    if (name2.equals(up[1])) {
 	                                        al.remove(i);
